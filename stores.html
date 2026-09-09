@@ -591,6 +591,14 @@
     max-width: 640px;
     margin: 0 0 34px;
   }
+  .page-intro-wide{
+    font-family:'IBM Plex Sans', 'Noto Sans TC', sans-serif;
+    font-size: 14.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    max-width: none;
+    margin: -20px 0 34px;
+  }
   .guides-grid{
     display: grid;
     gap: 14px;
@@ -720,7 +728,7 @@
   @media (max-width: 760px){
     .store-full{ grid-template-columns: 1fr; }
   }
-  .store-full img{ width: 100%; height: 100%; object-fit: cover; display:block; min-height: 200px; }
+  .store-full img{ width: 100%; height: 100%; object-fit: contain; background: var(--panel-2); display:block; min-height: 200px; }
   .store-full-body{ padding: 22px 24px; }
   .store-full-body h3{
     font-family:'Barlow Condensed', 'Noto Sans TC', sans-serif;
@@ -769,17 +777,17 @@
   </header>
 
   <nav class="top-nav" id="top-nav">
-    <a href="glass-configurator.html data-i18n-nav="glass">Glass</a>
-    <a href="mirror-configurator.html data-i18n-nav="mirrors">Mirrors</a>
-    <a href="guides.html data-i18n-nav="guides">Buying Guides</a>
-    <a href="stores.html class="active" data-i18n-nav="stores">Our Stores</a>
-    <a href="faq.html data-i18n-nav="faq">FAQ</a>
+    <a href="glass-configurator.html"  data-i18n-nav="glass">Glass</a>
+    <a href="mirror-configurator.html"  data-i18n-nav="mirrors">Mirrors</a>
+    <a href="guides.html"  data-i18n-nav="guides">Buying Guides</a>
+    <a href="stores.html" class="active" data-i18n-nav="stores">Our Stores</a>
+    <a href="faq.html"  data-i18n-nav="faq">FAQ</a>
   </nav>
   <p class="breadcrumb"><a href="mirror-configurator.html">Home</a> &rsaquo; Our Stores</p>
   <h1 class="page-title">Our Stores</h1>
   <p class="page-intro">Visit us in person to see Guardian Glass mirror samples up close — three showrooms across Hong Kong.</p>
 
-  <p class="page-intro" style="margin-top:-20px;"><strong style="color:var(--text);">More than glass &amp; mirrors.</strong> 升威 LE-RELAX is a comprehensive aluminium, glass and hardware fabricator. Beyond glass and mirrors, we also specialise in custom shower screens and doors (see <a href="https://le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a>) and aluminium windows and doors, with our own glass processing machinery in-house. For our full range and factory capabilities, visit <a href="https://www.le-relax.co" target="_blank" rel="noopener">www.le-relax.co</a>.</p>
+  <p class="page-intro-wide"><strong style="color:var(--text);">More than glass &amp; mirrors.</strong> 升威 LE-RELAX is a comprehensive aluminium, glass and hardware fabricator. Beyond glass and mirrors, we also specialise in custom shower screens and doors (see <a href="https://le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a>) and aluminium windows and doors, with our own glass processing machinery in-house. For our full range and factory capabilities, visit <a href="https://www.le-relax.co" target="_blank" rel="noopener">www.le-relax.co</a>.</p>
 
   <div class="store-full">
     <img src="https://le-relaxshower.com/assets/stores/tkt.jpg" alt="升威 LE-RELAX Tai Kok Tsui, Kowloon showroom">
