@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LE-RELAX Mirrors — 快靚鏡 Fai Leng Geng | Guardian Glass Quote Builder</title>
+<meta name="description" content="Configure a custom mirror online and get an instant HK$ quote. Silver, Guardian Glass Thailand, Grey, Bronze and Gold tints, any shape, tempering and edge finish. 快靚鏡 Fai Leng Geng, Hong Kong.">
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/mirror-configurator.html">
+<link rel="icon" href="https://le-relaxshower.com/assets/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LE-RELAX Mirrors — 快靚鏡 Fai Leng Geng | Guardian Glass Quote Builder">
+<meta property="og:description" content="Configure a custom mirror online and get an instant HK$ quote.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/mirror-configurator.html">
+<meta property="og:image" content="https://le-relaxshower.com/assets/logo.png">
+<meta property="og:locale" content="en_HK">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #EEEFEC;
+    --panel: #F8F8F6;
+    --panel-2: #F1F1EE;
+    --line: #C7CBC6;
+    --line-soft: #DDE0DA;
+    --cyan: #96501F;
+    --cyan-dim: #C9976B;
+    --amber: #96501F;
+    --text: #1C1F22;
+    --text-dim: #7B8288;
+    --text-faint: #9BA0A0;
+    --glass-fill: rgba(28, 31, 34, 0.05);
+    --ok-green: #25D366;
+  }
+  *{ box-sizing: border-box; }
+  .visually-hidden{
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    background-image: radial-gradient(circle, rgba(28,31,34,0.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: var(--text);
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    min-height: 100vh;
+  }
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+  }
+
+  /* Header */
+  header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .brand{ display:flex; align-items:center; gap: 12px; text-decoration: none; color: inherit; }
+  .brand-mark{
+    height: 40px; width: auto;
+    display: block;
+    flex-shrink:0;
+  }
+  .brand-name{
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    font-weight:700;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    margin:0;
+    text-transform: uppercase;
+    line-height:1.15;
+  }
+  .brand-name .brand-sub-mark{
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+    text-transform: none;
+    margin-left: 8px;
+  }
+  .brand span{
+    display:block;
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-size: 11.5px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .header-meta{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 11.5px;
+    color: var(--text-faint);
+    text-align:right;
+    line-height:1.6;
+  }
+  .header-meta b{ color: var(--text-dim); font-weight:500; }
+
+  .lang-toggle{
+    display:flex;
+    border: 1px solid var(--line);
+    margin-top: 10px;
+    margin-left: auto;
+    width: fit-content;
+  }
+  .lang-toggle button{
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .lang-toggle button + button{ border-left: 1px solid var(--line); }
+  .lang-toggle button:hover{ color: var(--text); }
+  .lang-toggle button.active{ background: rgba(111,224,255,0.1); color: var(--cyan); }
+
+  /* Top site nav */
+  .top-nav{
+    display:flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 22px;
+  }
+  .top-nav a{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    text-decoration: none;
+    transition: color .15s, border-color .15s, background .15s;
+  }
+  .top-nav a:hover{ border-color: var(--text); color: var(--text); }
+  .top-nav a.active{ background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 600; }
+
+  .first-time-banner{
+    margin: 0 0 22px;
+  }
+  .first-time-banner a{
+    display: block;
+    background: var(--text);
+    color: var(--bg);
+    padding: 14px 18px;
+    text-decoration: none;
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    transition: background .15s;
+  }
+  .first-time-banner a:hover{ background: var(--amber); }
+
+  /* Layout */
+  .grid{
+    display:grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 20px;
+    align-items:start;
+  }
+  @media (max-width: 880px){
+    .grid{ grid-template-columns: 1fr; }
+  }
+
+  .panel{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    position:relative;
+  }
+  .panel-head{
+    display:flex; align-items:center; gap:10px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .panel-head .num{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    color: var(--cyan);
+    font-size: 12px;
+    border:1px solid var(--cyan-dim);
+    width:20px; height:20px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .panel-head h2{
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    font-weight:600;
+    letter-spacing: 0.07em;
+    font-size: 15px;
+    margin:0;
+    color: var(--text);
+  }
+  .panel-body{ padding: 20px 18px 22px; }
+
+  /* Shape selector */
+  .shape-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .shape-btn{
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--text-dim);
+    padding: 12px 6px 10px;
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    cursor:pointer;
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    text-transform:uppercase;
+    transition: border-color .15s, color .15s, background .15s;
+  }
+  .shape-btn svg{ width: 30px; height: 30px; }
+  .shape-btn svg *{ stroke: var(--text-faint); transition: stroke .15s; fill:none; }
+  .shape-btn:hover{ border-color: var(--cyan-dim); color: var(--text); }
+  .shape-btn.active{ border-color: var(--cyan); color: var(--cyan); background: rgba(111,224,255,0.05); }
+  .shape-btn.active svg *{ stroke: var(--cyan); }
+
+  /* Fields */
+  .field{ margin-bottom: 18px; }
+  .field-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  label{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 7px;
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+  }
+  label .unit{ color: var(--text-faint); text-transform: none; letter-spacing:0; }
+  .field-help{
+    color: var(--cyan-dim);
+    text-transform: none;
+    letter-spacing: 0;
+    text-decoration: none;
+    font-size: 11px;
+  }
+  .field-help:hover{ color: var(--cyan); text-decoration: underline; }
+  input[type=number]{
+    width:100%;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--text);
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 16px;
+    padding: 10px 12px;
+    outline: none;
+    transition: border-color .15s;
+  }
+  input[type=number]:focus{ border-color: var(--cyan); }
+  input[type=number]::-webkit-inner-spin-button{ opacity: 0.5; filter: invert(1); }
+
+  select{
+    width:100%;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--text);
+    font-family:'Inter', 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    padding: 10px 12px;
+    outline:none;
+    cursor:pointer;
+    appearance:none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0L5 6L10 0Z' fill='%238fa5bb'/></svg>");
+    background-repeat:no-repeat;
+    background-position: right 14px center;
+    transition: border-color .15s;
+  }
+  select:focus{ border-color: var(--cyan); }
+
+  .stepper{
+    display:flex; align-items:stretch;
+    border:1px solid var(--line);
+    background: var(--panel-2);
+  }
+  .stepper button{
+    width: 40px;
+    background: transparent;
+    border:none;
+    color: var(--cyan);
+    font-size: 18px;
+    cursor:pointer;
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+  }
+  .stepper button:hover{ background: rgba(111,224,255,0.08); }
+  .stepper .val{
+    flex:1;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 16px;
+    border-left:1px solid var(--line); border-right:1px solid var(--line);
+  }
+
+  .divider{
+    border:none; border-top: 1px dashed var(--line);
+    margin: 22px 0;
+  }
+  .section-label{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 14px;
+  }
+
+  /* Preview panel */
+  .preview-stage{
+    padding: 10px 18px 0;
+    display:flex; justify-content:center;
+  }
+  .preview-stage svg{ width:100%; max-width: 420px; height:auto; display:block; }
+
+  .spec-readout{
+    padding: 4px 18px 18px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border-top: 1px solid var(--line);
+    margin-top: 12px;
+  }
+  .spec-cell{
+    background: var(--panel);
+    padding: 12px 14px;
+  }
+  .spec-cell .k{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 10px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .spec-cell .v{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 16px;
+    color: var(--cyan);
+  }
+
+  /* Price breakdown */
+  .price-panel{ margin-top: 20px; }
+  .price-rows{ padding: 4px 18px 0; }
+  .price-row{
+    display:flex; justify-content:space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line-soft);
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+  .price-row > span:first-child{ flex: 1; min-width: 0; overflow-wrap: break-word; }
+  .price-row > span:last-child{ color: var(--text); flex-shrink: 0; white-space: nowrap; }
+  .price-row.discount span:last-child{ color: var(--ok-green); }
+  .price-total{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding: 20px 18px 22px;
+    margin-top: 6px;
+    border-top: 1px solid var(--line);
+  }
+  .price-total .label{
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .price-total .amount{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 34px;
+    color: var(--cyan);
+    font-weight:500;
+  }
+  .price-total .amount sup{ font-size: 16px; color: var(--text-dim); }
+
+  .cta{
+    display:block;
+    width: 100%;
+    background: var(--amber);
+    color: #fff;
+    border: none;
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px 20px;
+    cursor: pointer;
+    margin: 0 18px 18px;
+    width: calc(100% - 36px);
+    transition: background .15s, transform .05s;
+  }
+  .cta:hover{ background: #ffb54d; }
+  .cta:active{ transform: translateY(1px); }
+
+  .min-note{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 10.5px;
+    color: var(--text-faint);
+    padding: 0 18px 16px;
+    line-height:1.5;
+  }
+
+  .toast{
+    position: fixed;
+    bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--panel);
+    border: 1px solid var(--cyan);
+    color: var(--text);
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 13px;
+    padding: 12px 20px;
+    opacity: 0;
+    pointer-events:none;
+    transition: opacity .25s, transform .25s;
+  }
+  .toast.show{ opacity:1; transform: translateX(-50%) translateY(0); }
+
+  .quote-actions{
+    display: block;
+    padding: 4px 18px 20px;
+    border-top: 1px solid var(--line);
+    margin-top: 8px;
+  }
+  .quote-actions-label{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 11.5px;
+    color: var(--text-dim);
+    text-align: center;
+    margin: 16px 0 12px;
+  }
+  .quote-stores{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 500px){
+    .quote-stores{ grid-template-columns: 1fr; }
+  }
+  .quote-store-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+    background: var(--ok-green);
+    border: 1px solid var(--ok-green);
+    color: #07321B;
+    text-decoration: none;
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    padding: 10px 8px;
+    transition: background .15s;
+  }
+  .quote-store-btn:hover{ background: #1fbd5c; border-color: #1fbd5c; }
+  .quote-store-btn svg{ width: 16px; height: 16px; margin-bottom: 2px; }
+  .quote-store-btn .qs-name{ font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+  .quote-store-btn .qs-sub{ font-size: 10px; color: #07321B; opacity: 0.75; }
+
+  .checkbox-field{
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    cursor: pointer;
+    padding-top: 8px;
+  }
+  .checkbox-field input{ accent-color: var(--text); cursor: pointer; width: 16px; height: 16px; flex-shrink: 0; }
+  .row-sub{ color: var(--text-faint); font-weight: 400; font-size: 10.5px; line-height: 1.5; }
+
+  /* Footer */
+  .site-footer{
+    margin-top: 50px;
+    border-top: 1px solid var(--line);
+    background: var(--panel-2);
+  }
+  .footer-banner{
+    text-align:center;
+    padding: 34px 20px 26px;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-banner h2{
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 22px;
+    color: var(--amber);
+    margin: 0 0 8px;
+  }
+  .footer-banner p{
+    font-family:'Inter', 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin: 0;
+  }
+  .stores-grid{
+    max-width: 1180px;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+  }
+  @media (max-width: 880px){
+    .stores-grid{ grid-template-columns: 1fr; }
+  }
+  .store-card{ background: var(--panel); padding: 24px 22px; }
+  .store-card h3{
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 16px;
+    color: var(--cyan);
+    margin: 0 0 10px;
+  }
+  .store-address{
+    font-family:'Inter', 'Noto Sans TC', sans-serif;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin: 0 0 16px;
+    min-height: 54px;
+  }
+  .store-actions{ display:flex; gap: 10px; flex-wrap: wrap; }
+  .store-actions a{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 12px;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    transition: border-color .15s, color .15s;
+  }
+  .store-actions a:hover{ border-color: var(--cyan); color: var(--cyan); }
+  .store-actions a.whatsapp{ background: var(--ok-green); border-color: var(--ok-green); color: #07321B; font-weight: 600; }
+  .store-actions a.whatsapp:hover{ background: #1fbd5c; border-color: #1fbd5c; }
+
+  .footer-bottom{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 22px 20px 32px;
+    text-align: center;
+  }
+  .footer-copy{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    margin: 0 0 6px;
+  }
+  .footer-sister{
+    font-family:'IBM Plex Mono', 'Noto Sans TC', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    margin: 0;
+  }
+  .footer-sister a{ color: var(--cyan); text-decoration: none; }
+  .footer-sister a:hover{ text-decoration: underline; }
+  @media (max-width: 560px){
+    .wrap{ padding: 20px 14px 40px; }
+    header{ flex-direction: column; align-items: flex-start; gap: 14px; }
+    .header-meta{ text-align: left; }
+    .lang-toggle{ margin-left: 0; }
+    .field-row{ grid-template-columns: 1fr; gap: 16px; }
+    .shape-grid{ grid-template-columns: repeat(2, 1fr); }
+    .spec-readout{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="https://le-relaxshower.com/assets/logo.png" alt="升威 LE-RELAX logo" width="55" height="40">
+      <div>
+        <p class="brand-name">LE-RELAX <span class="brand-sub-mark">升威</span></p>
+        <span id="brand-sub">快靚鏡 FAI LENG GENG &nbsp;/&nbsp; GUARDIAN GLASS MIRRORS &nbsp;/&nbsp; MADE IN THAILAND</span>
+      </div>
+    </a>
+    <div>
+      <div class="header-meta">
+        <span id="lbl-spec">SPEC SHEET</span> <b id="spec-id">#CG-00000</b><br>
+        <span id="lbl-tolerance">TOLERANCE</span> <b id="tolerance-val">±1/16"</b> &nbsp;·&nbsp; <span id="lbl-ship">SHIP</span> <b id="ship-val">1–2 DAYS</b>
+      </div>
+      <div class="lang-toggle" id="lang-toggle">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <button type="button" data-lang="zh">繁中</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="top-nav" id="top-nav">
+    <a href="glass-configurator.html" data-i18n-nav="glass">Glass</a>
+    <a href="mirror-configurator.html" class="active" data-i18n-nav="mirrors">Mirrors</a>
+    <a href="guides.html" data-i18n-nav="guides">Buying Guides</a>
+    <a href="stores.html" data-i18n-nav="stores">Our Stores</a>
+    <a href="faq.html" data-i18n-nav="faq">FAQ</a>
+  </nav>
+
+  <p class="first-time-banner" id="first-time-banner">
+    <a href="guide-first-time.html" id="lbl-first-time">First time here? Click here to understand the full customisation process &rarr;</a>
+  </p>
+
+  <h1 class="visually-hidden" id="page-h1">快靚鏡 Fai Leng Geng — Custom Mirror Quote Configurator, Hong Kong</h1>
+
+  <div class="grid">
+
+    <!-- LEFT: CONFIGURATOR -->
+    <div class="panel">
+      <div class="panel-head">
+        <div class="num">1</div>
+        <h2 id="panel1-title">Configure Panel</h2>
+      </div>
+      <div class="panel-body">
+
+        <p class="section-label" id="lbl-shape-section">Shape</p>
+        <div class="shape-grid" id="shape-grid">
+          <button class="shape-btn active" data-shape="rectangle">
+            <svg viewBox="0 0 32 32"><rect x="5" y="8" width="22" height="16" stroke-width="2"/></svg>
+            <span class="shape-label" data-i18n-shape="rectangle">Rectangle</span>
+          </button>
+          <button class="shape-btn" data-shape="circle">
+            <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11" stroke-width="2"/></svg>
+            <span class="shape-label" data-i18n-shape="circle">Circle</span>
+          </button>
+          <button class="shape-btn" data-shape="oval">
+            <svg viewBox="0 0 32 32"><ellipse cx="16" cy="16" rx="13" ry="8" stroke-width="2"/></svg>
+            <span class="shape-label" data-i18n-shape="oval">Oval</span>
+          </button>
+          <button class="shape-btn" data-shape="triangle">
+            <svg viewBox="0 0 32 32"><polygon points="16,7 27,25 5,25" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span class="shape-label" data-i18n-shape="triangle">Triangle</span>
+          </button>
+        </div>
+
+        <div class="field-row" id="dims-row">
+          <div class="field">
+            <label for="in-width"><span id="label-width">Width</span> <span class="unit" id="unit-w">inches</span></label>
+            <input type="number" id="in-width" value="24" min="2" max="96" step="0.125">
+          </div>
+          <div class="field" id="height-field">
+            <label for="in-height"><span id="label-height">Height</span> <span class="unit" id="unit-h">inches</span></label>
+            <input type="number" id="in-height" value="18" min="2" max="96" step="0.125">
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="field">
+          <label for="sel-type"><span id="lbl-glass-type">Mirror Tint</span> <a class="field-help" href="guide-mirror-tints.html" id="lbl-tint-help">Learn more &rarr;</a></label>
+          <select id="sel-type"></select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="sel-thickness" id="lbl-thickness">Thickness</label>
+            <select id="sel-thickness"></select>
+          </div>
+          <div class="field">
+            <label id="lbl-tempering">Tempering</label>
+            <select id="sel-tempering"></select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="sel-edge"><span id="lbl-edge">Edge Finish</span> <a class="field-help" href="guide-edge-finishes.html" id="lbl-edge-help">Learn more &rarr;</a></label>
+          <select id="sel-edge"></select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label id="lbl-film">Protective Film</label>
+            <select id="sel-film">
+              <option value="0">None</option>
+              <option value="1.5">Single-side (+HK$1.5/sqft)</option>
+              <option value="3">Double-side (+HK$3/sqft)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="checkbox-field" id="lbl-crate-wrap"><input type="checkbox" id="chk-crate"> <span id="lbl-crate">Wooden crate packaging (+HK$300)</span></label>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label id="lbl-holes">Corner Holes</label>
+            <div class="stepper">
+              <button type="button" id="holes-minus" aria-label="Decrease corner holes">−</button>
+              <div class="val" id="holes-val">0</div>
+              <button type="button" id="holes-plus" aria-label="Increase corner holes">+</button>
+            </div>
+          </div>
+          <div class="field">
+            <label id="lbl-qty">Quantity</label>
+            <div class="stepper">
+              <button type="button" id="qty-minus" aria-label="Decrease quantity">−</button>
+              <div class="val" id="qty-val">1</div>
+              <button type="button" id="qty-plus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: PREVIEW + PRICE -->
+    <div>
+      <div class="panel">
+        <div class="panel-head">
+          <div class="num">2</div>
+          <h2 id="panel2-title">Cut Preview</h2>
+        </div>
+        <div class="preview-stage">
+          <svg id="blueprint" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sheen" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1C1F22" stop-opacity="0.03"/>
+                <stop offset="45%" stop-color="#1C1F22" stop-opacity="0.16"/>
+                <stop offset="55%" stop-color="#1C1F22" stop-opacity="0.03"/>
+                <stop offset="100%" stop-color="#1C1F22" stop-opacity="0.03"/>
+              </linearGradient>
+            </defs>
+            <g id="shape-layer"></g>
+            <g id="dim-layer" font-family="IBM Plex Mono, monospace" font-size="12" fill="#1C1F22"></g>
+            <g id="hole-layer"></g>
+          </svg>
+        </div>
+        <div class="spec-readout">
+          <div class="spec-cell">
+            <div class="k" id="lbl-area">Area</div>
+            <div class="v" id="spec-area">— sq ft</div>
+          </div>
+          <div class="spec-cell">
+            <div class="k" id="lbl-perimeter">Perimeter</div>
+            <div class="v" id="spec-perimeter">— ft</div>
+          </div>
+          <div class="spec-cell">
+            <div class="k" id="lbl-weight">Est. Weight</div>
+            <div class="v" id="spec-weight">— kg</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel price-panel">
+        <div class="panel-head">
+          <div class="num">3</div>
+          <h2 id="panel3-title">Price Breakdown</h2>
+        </div>
+        <div class="price-rows">
+          <div class="price-row"><span><span id="lbl-material">Material</span> (<span id="pb-type">Silver Mirror</span>)<br><small id="pb-material-sub" class="row-sub"></small></span><span id="pb-material">HK$0</span></div>
+          <div class="price-row" id="pb-temper-row"><span><span id="lbl-temper-row">Tempering</span><br><small id="pb-temper-sub" class="row-sub"></small></span><span id="pb-temper">HK$0</span></div>
+          <div class="price-row"><span><span id="lbl-edge-row">Edge finish</span><br><small id="pb-edge-sub" class="row-sub"></small></span><span id="pb-edge">HK$0</span></div>
+          <div class="price-row" id="pb-holes-parent"><span id="lbl-holes-row">Corner holes</span><span id="pb-holes">HK$0</span></div>
+          <div class="price-row" id="pb-film-row" style="display:none;"><span id="lbl-film-row">Protective film</span><span id="pb-film">HK$0</span></div>
+          <div class="price-row" id="pb-crate-row" style="display:none;"><span id="lbl-crate-row">Wooden crate</span><span id="pb-crate">HK$0</span></div>
+          <div class="price-row"><span id="lbl-unit-price">Price per panel</span><span id="pb-unit">HK$0</span></div>
+          <div class="price-row"><span><span id="lbl-qty-row">Quantity ×</span><span id="pb-qty-mult">1</span></span><span id="pb-subtotal">HK$0</span></div>
+          <div class="price-row discount" id="pb-discount-row" style="display:none;"><span id="lbl-discount">Volume discount</span><span id="pb-discount">−HK$0</span></div>
+        </div>
+        <div class="price-total">
+          <span class="label" id="lbl-total">Estimated Total</span>
+          <span class="amount"><sup>HK$</sup><span id="pb-total">0</span></span>
+        </div>
+        <div class="quote-actions" id="quote-actions">
+          <p class="quote-actions-label" id="lbl-send-quote">Send this quote via WhatsApp:</p>
+          <div class="quote-stores">
+            <a class="quote-store-btn" id="qs-store1" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.5.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.6-.6-2.9-1.3-4.8-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.9.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+              <span class="qs-name" id="qs-store1-name">Tai Kok Tsui</span>
+              <span class="qs-sub" id="qs-store1-zh">大角咀</span>
+            </a>
+            <a class="quote-store-btn" id="qs-store2" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.5.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.6-.6-2.9-1.3-4.8-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.9.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+              <span class="qs-name" id="qs-store2-name">Tuen Mun</span>
+              <span class="qs-sub" id="qs-store2-zh">屯門</span>
+            </a>
+            <a class="quote-store-btn" id="qs-store3" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.5.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.6-.6-2.9-1.3-4.8-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.9.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+              <span class="qs-name" id="qs-store3-name">Fo Tan</span>
+              <span class="qs-sub" id="qs-store3-zh">火炭</span>
+            </a>
+          </div>
+        </div>
+        <p class="min-note" id="min-note">Estimate only — final quote confirmed by our team. Prices exclude specialty mirror builds; contact a store directly for those.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-banner">
+    <h2 id="lbl-contact-banner">Contact Us Now to Order</h2>
+    <p id="lbl-contact-banner-sub">Get in touch to confirm pricing and place your order.</p>
+  </div>
+
+  <div class="stores-grid" id="stores-grid">
+    <div class="store-card">
+      <h3 id="store1-name">Tai Kok Tsui</h3>
+      <p class="store-address">G/F, 8-10 Larch Street, Tai Kok Tsui, Kowloon</p>
+      <div class="store-actions">
+        <a href="tel:+85223931419">2393 1419</a>
+        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <h3 id="store2-name">Tuen Mun</h3>
+      <p class="store-address">Shop 2A &amp; B, G/F, Ming Fat Industrial Centre, 1 Kin Fat Street, Tuen Mun, New Territories</p>
+      <div class="store-actions">
+        <a href="tel:+85226187462">2618 7462</a>
+        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="store-card">
+      <h3 id="store3-name">Fo Tan</h3>
+      <p class="store-address">Shop A, G/F, Block 1, Kin Ho Industrial Building, 14-24 Au Pui Wan Street, Fo Tan</p>
+      <div class="store-actions">
+        <a href="tel:+85235808136">3580 8136</a>
+        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy" id="footer-copy">© 升威 LE-RELAX 五金鋁質玻璃製品有限公司 — Custom Glass &amp; Mirrors, Hong Kong.</p>
+    <p class="footer-sister" id="footer-sister">Also looking for shower doors? Visit <a href="https://www.le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const state = {
+    shape: 'rectangle',
+    width: 24,
+    height: 18,
+    holes: 0,
+    qty: 1,
+    lang: 'en'
+  };
+
+  const els = {
+    shapeBtns: document.querySelectorAll('.shape-btn'),
+    width: document.getElementById('in-width'),
+    height: document.getElementById('in-height'),
+    heightField: document.getElementById('height-field'),
+    labelWidth: document.getElementById('label-width'),
+    labelHeight: document.getElementById('label-height'),
+    type: document.getElementById('sel-type'),
+    thickness: document.getElementById('sel-thickness'),
+    tempering: document.getElementById('sel-tempering'),
+    edge: document.getElementById('sel-edge'),
+    film: document.getElementById('sel-film'),
+    crate: document.getElementById('chk-crate'),
+    holesVal: document.getElementById('holes-val'),
+    qtyVal: document.getElementById('qty-val'),
+    shapeLayer: document.getElementById('shape-layer'),
+    dimLayer: document.getElementById('dim-layer'),
+    holeLayer: document.getElementById('hole-layer'),
+    specArea: document.getElementById('spec-area'),
+    specPerimeter: document.getElementById('spec-perimeter'),
+    specWeight: document.getElementById('spec-weight'),
+    pbType: document.getElementById('pb-type'),
+    pbMaterial: document.getElementById('pb-material'),
+    pbMaterialSub: document.getElementById('pb-material-sub'),
+    pbTemperRow: document.getElementById('pb-temper-row'),
+    pbTemper: document.getElementById('pb-temper'),
+    pbTemperSub: document.getElementById('pb-temper-sub'),
+    pbEdge: document.getElementById('pb-edge'),
+    pbEdgeSub: document.getElementById('pb-edge-sub'),
+    pbHolesParent: document.getElementById('pb-holes-parent'),
+    pbHoles: document.getElementById('pb-holes'),
+    pbFilmRow: document.getElementById('pb-film-row'),
+    pbFilm: document.getElementById('pb-film'),
+    pbCrateRow: document.getElementById('pb-crate-row'),
+    pbCrate: document.getElementById('pb-crate'),
+    pbUnit: document.getElementById('pb-unit'),
+    pbQtyMult: document.getElementById('pb-qty-mult'),
+    pbSubtotal: document.getElementById('pb-subtotal'),
+    pbDiscountRow: document.getElementById('pb-discount-row'),
+    pbDiscount: document.getElementById('pb-discount'),
+    pbTotal: document.getElementById('pb-total'),
+    specId: document.getElementById('spec-id'),
+    unitW: document.getElementById('unit-w'),
+    unitH: document.getElementById('unit-h'),
+    shapeLabels: document.querySelectorAll('.shape-label'),
+    langBtns: document.querySelectorAll('#lang-toggle button'),
+    navLinks: document.querySelectorAll('[data-i18n-nav]'),
+    quoteActions: document.getElementById('quote-actions'),
+    qsStore1: document.getElementById('qs-store1'),
+    qsStore2: document.getElementById('qs-store2'),
+    qsStore3: document.getElementById('qs-store3')
+  };
+
+  // ---- Real wholesale pricing data (HK$ per sq ft unless noted) ----
+  const GLASS_TYPES = {
+    silver:    { en:'Silver Mirror',                       zh:'白鏡片',         prices:{3:18,4:13,5:14,6:17} },
+    thailand:  { en:'Guardian Glass Mirror (Thailand)',     zh:'白鏡片-泰國鏡',  prices:{6:17} },
+    grey:      { en:'Grey Mirror',                          zh:'灰色鏡片',       prices:{5:23,6:25} },
+    bronze:    { en:'Bronze Mirror',                        zh:'茶色鏡片',       prices:{5:23,6:25} },
+    gold:      { en:'Gold Mirror',                          zh:'金色鏡片',       prices:{5:28} }
+  };
+
+  const TEMPERING = {
+    none:          { en:'Raw / Annealed (Not Tempered)', zh:'原片（不鋼化）', prices:{} },
+    tempered:      { en:'Tempered',                      zh:'鋼化玻璃',       prices:{4:3,5:3,6:3,8:4,10:4,12:5,15:10} },
+    semitempered:  { en:'Heat-Strengthened',             zh:'半鋼化',         prices:{3:7.5,4:7,5:7,6:7.5,8:7.5,10:8.5,12:9,15:16,19:18} }
+  };
+
+  const EDGE_FINISHES = {
+    raw:         { en:'Raw / Unfinished',            zh:'原邊 / 未打磨',   prices:{}, rectOnly:false },
+    polished:    { en:'Fine Polished Straight Edge',  zh:'精磨企邊',       prices:{4:1.5,5:1.5,6:1.5,8:2,10:2.5,12:3,15:4.5,19:5.5}, rectOnly:false },
+    bevel4:      { en:'Small Bevel (4-fen)',          zh:'4分斜邊',        prices:{6:3,8:4,10:5,12:5.5,15:13,19:17}, rectOnly:true },
+    bevel6:      { en:'Medium Bevel (6-fen)',         zh:'6分斜邊',        prices:{6:3.5,8:5,10:6,12:6,15:13.5,19:17.5}, rectOnly:true },
+    bevel1in:    { en:'Large Bevel (1-inch)',         zh:'1吋斜邊',        prices:{6:4,8:6,10:7.5,12:7.5,15:20,19:23}, rectOnly:true },
+    round:       { en:'Round / Half-Round Edge',      zh:'圓/半圓邊',      prices:{6:2.5,8:4,10:6,12:8,15:16,19:24}, rectOnly:false },
+    herringbone: { en:'45° Herringbone Edge',         zh:'45°人字邊',      prices:{8:7.5,10:10.5,12:12.5,15:15.5}, rectOnly:true }
+  };
+
+  function holeFee(mm){
+    if(mm <= 8) return 30;
+    if(mm <= 12) return 40;
+    return 80;
+  }
+
+  const SHAPE_RULES = {
+    rectangle: { irregular:false, materialMult:1.0, edgeMult:1.0, minSqFt:2 },
+    circle:    { irregular:true,  materialMult:1.3, edgeMult:1.5, minSqFt:3 },
+    oval:      { irregular:true,  materialMult:1.3, edgeMult:1.5, minSqFt:3 },
+    triangle:  { irregular:true,  materialMult:1.3, edgeMult:1.5, minSqFt:3 }
+  };
+
+  const CRATE_FEE = 300;
+
+  const STORES = [
+    { key: 'store1', nameEn: 'Tai Kok Tsui', nameZh: '大角咀', whatsapp: '85268419246' },
+    { key: 'store2', nameEn: 'Tuen Mun',     nameZh: '屯門',   whatsapp: '85255346347' },
+    { key: 'store3', nameEn: 'Fo Tan',       nameZh: '火炭',   whatsapp: '85255321176' }
+  ];
+
+  const I18N = {
+    en: {
+      brandSub: 'FAI LENG GENG  /  GUARDIAN GLASS MIRRORS  /  MADE IN THAILAND',
+      lblSpec: 'SPEC SHEET', lblTolerance: 'TOLERANCE', toleranceVal: '±2mm',
+      lblShip: 'SHIP', shipVal: '1–2 DAYS',
+      nav: { glass: 'Glass', mirrors: 'Mirrors', guides: 'Buying Guides', stores: 'Our Stores', faq: 'FAQ' },
+      panel1: 'Configure Panel', shapeSection: 'Shape',
+      shapes: { rectangle: 'Rectangle', circle: 'Circle', oval: 'Oval', triangle: 'Triangle' },
+      dims: { width: 'Width', height: 'Height', diameter: 'Diameter', base: 'Base' },
+      unitIn: 'inches', unitMark: '"',
+      lblGlassType: 'Mirror Tint',
+      lblThickness: 'Thickness', lblTempering: 'Tempering', lblEdge: 'Edge Finish',
+      lblFilm: 'Protective Film', lblCrate: 'Wooden crate packaging (+HK$300)',
+      lblHoles: 'Corner Holes', lblQty: 'Quantity',
+      panel2: 'Cut Preview', lblArea: 'Area', lblPerimeter: 'Perimeter', lblWeight: 'Est. Weight',
+      unitSqft: 'sq ft', unitFt: 'ft', unitKg: 'kg',
+      panel3: 'Price Breakdown', lblMaterial: 'Material', lblTemperRow: 'Tempering', lblEdgeRow: 'Edge finish',
+      lblHolesRow: 'Corner holes', lblFilmRow: 'Protective film', lblCrateRow: 'Wooden crate',
+      lblUnitPrice: 'Price per panel', lblQtyRow: 'Quantity ×',
+      lblDiscount: 'Volume discount', lblTotal: 'Estimated Total',
+      cta: 'Get Quote', sendQuoteLabel: 'Send this quote via WhatsApp:',
+      firstTimeText: 'First time here? Click here to understand the full customisation process →',
+      minNote: 'Estimate only — final quote confirmed by our team. Prices exclude insulated/laminated builds and specialty glass; contact a store directly for those.',
+      minAreaNote: (n) => `${n} sq ft minimum billing basis applied`,
+      irregularNote: '+30% cutting surcharge for non-rectangular shapes',
+      irregularEdgeNote: '+50% edge surcharge for non-rectangular shapes',
+      contactBanner: 'Contact Us Now to Order',
+      contactBannerSub: 'Get in touch to confirm pricing and place your order.',
+      store1: 'Tai Kok Tsui', store2: 'Tuen Mun', store3: 'Fo Tan',
+      footerCopy: '© 升威 LE-RELAX 五金鋁質玻璃製品有限公司 — Custom Glass & Mirrors, Hong Kong.',
+      footerSister: 'Also looking for shower doors? Visit le-relaxshower.com'
+    },
+    zh: {
+      brandSub: '快靡鏡 Fai Leng Geng ／ Guardian Glass 鏡子系列 ／ 泰國製造',
+      lblSpec: '規格編號', lblTolerance: '公差', toleranceVal: '±2mm',
+      lblShip: '付運', shipVal: '1–2個工作天',
+      nav: { glass: '玻璃', mirrors: '鏡子', guides: '選購指南', stores: '分店地址', faq: '常見問題' },
+      panel1: '設定規格', shapeSection: '形狀',
+      shapes: { rectangle: '長方形', circle: '圓形', oval: '橢圓形', triangle: '三角形' },
+      dims: { width: '闊度', height: '高度', diameter: '直徑', base: '底邊' },
+      unitIn: '吋', unitMark: '吋',
+      lblGlassType: '鏡面顏色',
+      lblThickness: '厚度', lblTempering: '鋼化處理', lblEdge: '邊緣處理',
+      lblFilm: '保護膜', lblCrate: '木箱包裝 (+HK$300)',
+      lblHoles: '角孔數量', lblQty: '數量',
+      panel2: '切割預覽', lblArea: '面積', lblPerimeter: '周長', lblWeight: '預估重量',
+      unitSqft: '平方呑', unitFt: '呑', unitKg: '公斤',
+      panel3: '價格明細', lblMaterial: '物料', lblTemperRow: '鋼化加工', lblEdgeRow: '邊緣處理',
+      lblHolesRow: '角孔費用', lblFilmRow: '保護膜', lblCrateRow: '木箱包裝',
+      lblUnitPrice: '每件價格', lblQtyRow: '數量 ×',
+      lblDiscount: '批量優惠', lblTotal: '預估總額',
+      cta: '獲取報價', sendQuoteLabel: '透過 WhatsApp 將此報價傳送：',
+      firstTimeText: '第一次來？請按此了解完整訂購流程 →',
+      minNote: '此價格僅供參考，最終報價須經我們確認。价格不包括中空/夾膚玻璃及特殊玻璃，請直接聯絡分店查詢。',
+      minAreaNote: (n) => `最低收費基準為 ${n} 平方呑`,
+      irregularNote: '非長方形需加收 30% 開介費',
+      irregularEdgeNote: '非長方形需加收 50% 邊緣費',
+      contactBanner: '立即聯絡我們下單',
+      contactBannerSub: '請聯絡我們確認價目並下單。',
+      store1: '大角咀', store2: '屯門', store3: '火炭',
+      footerCopy: '© 升威 LE-RELAX 五金鋁質玻璃製品有限公司 — 訂製玻璃及鏡子，香港。',
+      footerSister: '需要洗澡門報價？歡迎光臨 le-relaxshower.com'
+    }
+  };
+
+  function specNumber(){
+    return 'CG-' + String(10000 + Math.floor(Math.random()*89999));
+  }
+  els.specId.textContent = '#' + specNumber();
+
+  function fmtHK(n){
+    return 'HK$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  // ---- Shape config: labels ----
+  function configureFieldsForShape(shape){
+    const d = I18N[state.lang].dims;
+    if(shape === 'circle'){
+      els.labelWidth.textContent = d.diameter;
+      els.heightField.style.display = 'none';
+    } else if(shape === 'oval'){
+      els.labelWidth.textContent = d.width;
+      els.labelHeight.textContent = d.height;
+      els.heightField.style.display = '';
+    } else if(shape === 'triangle'){
+      els.labelWidth.textContent = d.base;
+      els.labelHeight.textContent = d.height;
+      els.heightField.style.display = '';
+    } else {
+      els.labelWidth.textContent = d.width;
+      els.labelHeight.textContent = d.height;
+      els.heightField.style.display = '';
+    }
+  }
+
+  function geometry(shape, w, h){
+    let area, perimeter;
+    if(shape === 'rectangle'){
+      area = w * h;
+      perimeter = 2 * (w + h);
+    } else if(shape === 'circle'){
+      const r = w / 2;
+      area = Math.PI * r * r;
+      perimeter = Math.PI * w;
+    } else if(shape === 'oval'){
+      const a = w/2, b = h/2;
+      area = Math.PI * a * b;
+      perimeter = Math.PI * (3*(a+b) - Math.sqrt((3*a+b)*(a+3*b)));
+    } else if(shape === 'triangle'){
+      area = 0.5 * w * h;
+      const side = Math.sqrt((w/2)*(w/2) + h*h);
+      perimeter = w + 2*side;
+    }
+    return { area, perimeter };
+  }
+
+  // ---- Dynamic dropdown population ----
+  function populateGlassTypes(){
+    const t = I18N[state.lang];
+    els.type.innerHTML = '';
+    Object.keys(GLASS_TYPES).forEach(key=>{
+      const g = GLASS_TYPES[key];
+      const opt = document.createElement('option');
+      opt.value = key;
+      opt.textContent = state.lang === 'zh' ? g.zh : g.en;
+      els.type.appendChild(opt);
+    });
+  }
+
+  function currentThicknessMm(){
+    return parseFloat(els.thickness.value);
+  }
+
+  function populateThicknesses(){
+    const key = els.type.value;
+    const prices = GLASS_TYPES[key].prices;
+    const mms = Object.keys(prices).map(Number).sort((a,b)=>a-b);
+    const prevVal = els.thickness.value;
+    els.thickness.innerHTML = '';
+    mms.forEach(mm=>{
+      const opt = document.createElement('option');
+      opt.value = mm;
+      opt.textContent = `${mm}mm — HK$${prices[mm]}/sqft`;
+      els.thickness.appendChild(opt);
+    });
+    if(mms.includes(Number(prevVal))){
+      els.thickness.value = prevVal;
+    } else if(mms.includes(6)){
+      els.thickness.value = 6;
+    }
+  }
+
+  function populateTempering(){
+    const t = I18N[state.lang];
+    const mm = currentThicknessMm();
+    const prevVal = els.tempering.value;
+    els.tempering.innerHTML = '';
+    Object.keys(TEMPERING).forEach(key=>{
+      const tp = TEMPERING[key];
+      const valid = key === 'none' || tp.prices[mm] !== undefined;
+      if(!valid) return;
+      const opt = document.createElement('option');
+      opt.value = key;
+      const label = state.lang === 'zh' ? tp.zh : tp.en;
+      opt.textContent = key === 'none' ? label : `${label} (+HK$${tp.prices[mm]}/sqft)`;
+      els.tempering.appendChild(opt);
+    });
+    const vals = Array.from(els.tempering.options).map(o=>o.value);
+    if(vals.includes(prevVal)) els.tempering.value = prevVal;
+  }
+
+  function populateEdges(){
+    const mm = currentThicknessMm();
+    const shape = state.shape;
+    const prevVal = els.edge.value;
+    els.edge.innerHTML = '';
+    Object.keys(EDGE_FINISHES).forEach(key=>{
+      const e = EDGE_FINISHES[key];
+      if(e.rectOnly && shape !== 'rectangle') return;
+      const valid = key === 'raw' || e.prices[mm] !== undefined;
+      if(!valid) return;
+      const opt = document.createElement('option');
+      opt.value = key;
+      const label = state.lang === 'zh' ? e.zh : e.en;
+      opt.textContent = key === 'raw' ? label : `${label} (+HK$${e.prices[mm]}/ft)`;
+      els.edge.appendChild(opt);
+    });
+    const vals = Array.from(els.edge.options).map(o=>o.value);
+    if(vals.includes(prevVal)) els.edge.value = prevVal;
+  }
+
+  function refreshDependentDropdowns(){
+    populateThicknesses();
+    populateTempering();
+    populateEdges();
+  }
+
+  // ---- SVG drawing ----
+  const STAGE_W = 400, STAGE_H = 320;
+  const MARGIN_LEFT = 68, MARGIN_RIGHT = 28, MARGIN_TOP = 28, MARGIN_BOTTOM = 58;
+  const AVAIL_W = STAGE_W - MARGIN_LEFT - MARGIN_RIGHT;
+  const AVAIL_H = STAGE_H - MARGIN_TOP - MARGIN_BOTTOM;
+  const DRAW_CX = MARGIN_LEFT + AVAIL_W / 2;
+  const DRAW_CY = MARGIN_TOP + AVAIL_H / 2;
+
+  function drawShape(shape, w, h){
+    els.shapeLayer.innerHTML = '';
+    els.dimLayer.innerHTML = '';
+    els.holeLayer.innerHTML = '';
+
+    const effH = shape === 'circle' ? w : h;
+    const scale = Math.min(AVAIL_W / w, AVAIL_H / effH);
+    const dw = w * scale;
+    const dh = effH * scale;
+
+    const ns = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs){
+      const e = document.createElementNS(ns, tag);
+      for(const k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+
+    let shapeEl, holePositions = [];
+    const mark = I18N[state.lang].unitMark;
+
+    if(shape === 'rectangle'){
+      const x = DRAW_CX - dw/2, y = DRAW_CY - dh/2;
+      shapeEl = el('rect', {x, y, width: dw, height: dh, fill: 'url(#sheen)', stroke: '#1C1F22', 'stroke-width': 1.5, 'stroke-dasharray': '6 4'});
+      holePositions = [[x+14,y+14],[x+dw-14,y+14],[x+14,y+dh-14],[x+dw-14,y+dh-14]];
+      drawDim(DRAW_CX, y+dh+26, dw, `${w}${mark}`, 'h', x, y+dh+16);
+      drawDim(x-26, DRAW_CY, dh, `${h}${mark}`, 'v', x-16, y);
+    } else if(shape === 'circle'){
+      const r = dw/2;
+      shapeEl = el('circle', {cx: DRAW_CX, cy: DRAW_CY, r, fill: 'url(#sheen)', stroke: '#1C1F22', 'stroke-width': 1.5, 'stroke-dasharray': '6 4'});
+      holePositions = [[DRAW_CX, DRAW_CY - r + 14]];
+      drawDim(DRAW_CX, DRAW_CY + r + 26, dw, `⌀ ${w}${mark}`, 'h', DRAW_CX-r, DRAW_CY+r+16);
+    } else if(shape === 'oval'){
+      const rx = dw/2, ry = dh/2;
+      shapeEl = el('ellipse', {cx: DRAW_CX, cy: DRAW_CY, rx, ry, fill: 'url(#sheen)', stroke: '#1C1F22', 'stroke-width': 1.5, 'stroke-dasharray': '6 4'});
+      holePositions = [[DRAW_CX, DRAW_CY-ry+16]];
+      drawDim(DRAW_CX, DRAW_CY+ry+26, dw, `${w}${mark}`, 'h', DRAW_CX-rx, DRAW_CY+ry+16);
+      drawDim(DRAW_CX-rx-26, DRAW_CY, dh, `${h}${mark}`, 'v', DRAW_CX-rx-16, DRAW_CY-ry);
+    } else if(shape === 'triangle'){
+      const x0 = DRAW_CX - dw/2, x1 = DRAW_CX + dw/2, xTop = DRAW_CX;
+      const yBase = DRAW_CY + dh/2, yTop = DRAW_CY - dh/2;
+      const pts = `${xTop},${yTop} ${x1},${yBase} ${x0},${yBase}`;
+      shapeEl = el('polygon', {points: pts, fill: 'url(#sheen)', stroke: '#1C1F22', 'stroke-width': 1.5, 'stroke-dasharray': '6 4', 'stroke-linejoin':'round'});
+      holePositions = [[xTop, yBase-16]];
+      drawDim(DRAW_CX, yBase+26, dw, `${w}${mark}`, 'h', x0, yBase+16);
+      drawDim(x0-26, DRAW_CY, dh, `${h}${mark}`, 'v', x0-16, yTop);
+    }
+
+    els.shapeLayer.appendChild(shapeEl);
+
+    holePositions.slice(0, Math.min(state.holes,4)).forEach(([hx,hy])=>{
+      const c = el('circle', {cx: hx, cy: hy, r: 4, fill: '#EEEFEC', stroke: '#96501F', 'stroke-width': 1.5});
+      els.holeLayer.appendChild(c);
+    });
+
+    function drawDim(cx, cy, length, label, orient, lx, ly){
+      const g = el('g', {});
+      if(orient === 'h'){
+        const y = cy;
+        const x1 = cx - length/2, x2 = cx + length/2;
+        g.appendChild(el('line', {x1, y1:y, x2, y2:y, stroke:'#1C1F22', 'stroke-width':1, 'marker-start':'url(#arrow)', 'marker-end':'url(#arrow)'}));
+        g.appendChild(el('line', {x1, y1:y-5, x2:x1, y2:y+5, stroke:'#1C1F22', 'stroke-width':1}));
+        g.appendChild(el('line', {x1:x2, y1:y-5, x2, y2:y+5, stroke:'#1C1F22', 'stroke-width':1}));
+        const t = el('text', {x: cx, y: y-8, 'text-anchor':'middle'});
+        t.textContent = label;
+        g.appendChild(t);
+      } else {
+        const x = cx;
+        const y1 = cy - length/2, y2 = cy + length/2;
+        g.appendChild(el('line', {x1:x, y1, x2:x, y2, stroke:'#1C1F22', 'stroke-width':1}));
+        g.appendChild(el('line', {x1:x-5, y1, x2:x+5, y2:y1, stroke:'#1C1F22', 'stroke-width':1}));
+        g.appendChild(el('line', {x1:x-5, y1:y2, x2:x+5, y2, stroke:'#1C1F22', 'stroke-width':1}));
+        const t = el('text', {x: x-10, y: cy, 'text-anchor':'end', 'dominant-baseline':'middle'});
+        t.textContent = label;
+        g.appendChild(t);
+      }
+      els.dimLayer.appendChild(g);
+    }
+  }
+
+  // ---- Pricing ----
+  function computePrice(){
+    const t = I18N[state.lang];
+    const shape = state.shape;
+    const rules = SHAPE_RULES[shape];
+    const w = parseFloat(els.width.value) || 0;
+    const h = shape === 'circle' ? w : (parseFloat(els.height.value) || 0);
+    const { area, perimeter } = geometry(shape, w, h);
+    const areaSqFt = area / 144;
+    const perimeterFt = perimeter / 12;
+    const billableSqFt = Math.max(areaSqFt, rules.minSqFt);
+
+    const typeKey = els.type.value;
+    const glassType = GLASS_TYPES[typeKey];
+    const mm = currentThicknessMm();
+    const baseRate = glassType.prices[mm] || 0;
+
+    const temperKey = els.tempering.value;
+    const temperRate = TEMPERING[temperKey].prices[mm] || 0;
+
+    const edgeKey = els.edge.value;
+    const edgeRate = EDGE_FINISHES[edgeKey].prices[mm] || 0;
+
+    const filmRate = parseFloat(els.film.value) || 0;
+    const crateOn = els.crate.checked;
+
+    const materialCost = billableSqFt * baseRate * rules.materialMult;
+    const temperCost = temperKey === 'none' ? 0 : billableSqFt * temperRate;
+    const edgeCost = edgeKey === 'raw' ? 0 : perimeterFt * edgeRate * rules.edgeMult;
+    const holesCost = state.holes * holeFee(mm);
+    const filmCost = filmRate > 0 ? billableSqFt * filmRate : 0;
+    const crateCost = crateOn ? CRATE_FEE : 0;
+
+    const unitPrice = materialCost + temperCost + edgeCost + holesCost + filmCost + crateCost;
+
+    let discountRate = 0;
+    if(state.qty >= 10) discountRate = 0.12;
+    else if(state.qty >= 5) discountRate = 0.06;
+
+    const rawSubtotal = unitPrice * state.qty;
+    const discountAmt = rawSubtotal * discountRate;
+    const total = rawSubtotal - discountAmt;
+
+    const weightKg = areaSqFt * mm * 0.23225;
+
+    // ---- spec readout ----
+    els.specArea.textContent = areaSqFt.toFixed(2) + ' ' + t.unitSqft;
+    els.specPerimeter.textContent = perimeterFt.toFixed(1) + ' ' + t.unitFt;
+    els.specWeight.textContent = weightKg.toFixed(1) + ' ' + t.unitKg;
+
+    // ---- price breakdown ----
+    els.pbType.textContent = els.type.selectedOptions[0].textContent;
+    els.pbMaterial.textContent = fmtHK(materialCost);
+    let materialSubParts = [`${billableSqFt.toFixed(2)} sqft × HK$${baseRate}/sqft`];
+    if(rules.irregular) materialSubParts.push(t.irregularNote);
+    if(areaSqFt < rules.minSqFt) materialSubParts.push(t.minAreaNote(rules.minSqFt));
+    els.pbMaterialSub.textContent = materialSubParts.join(' · ');
+
+    if(temperKey === 'none'){
+      els.pbTemperRow.style.display = 'none';
+    } else {
+      els.pbTemperRow.style.display = '';
+      els.pbTemper.textContent = fmtHK(temperCost);
+      els.pbTemperSub.textContent = `${els.tempering.selectedOptions[0].textContent.split(' (')[0]} · ${billableSqFt.toFixed(2)} sqft × HK$${temperRate}/sqft`;
+    }
+
+    els.pbEdge.textContent = fmtHK(edgeCost);
+    if(edgeKey === 'raw'){
+      els.pbEdgeSub.textContent = '';
+    } else {
+      let edgeSubParts = [`${perimeterFt.toFixed(1)} ft × HK$${edgeRate}/ft`];
+      if(rules.irregular) edgeSubParts.push(t.irregularEdgeNote);
+      els.pbEdgeSub.textContent = edgeSubParts.join(' · ');
+    }
+
+    els.pbHolesParent.style.display = state.holes > 0 ? '' : 'none';
+    els.pbHoles.textContent = fmtHK(holesCost);
+
+    if(filmCost > 0){
+      els.pbFilmRow.style.display = '';
+      els.pbFilm.textContent = fmtHK(filmCost);
+    } else {
+      els.pbFilmRow.style.display = 'none';
+    }
+
+    if(crateCost > 0){
+      els.pbCrateRow.style.display = '';
+      els.pbCrate.textContent = fmtHK(crateCost);
+    } else {
+      els.pbCrateRow.style.display = 'none';
+    }
+
+    els.pbUnit.textContent = fmtHK(unitPrice);
+    els.pbQtyMult.textContent = state.qty;
+    els.pbSubtotal.textContent = fmtHK(rawSubtotal);
+
+    if(discountRate > 0){
+      els.pbDiscountRow.style.display = '';
+      els.pbDiscount.textContent = '−' + fmtHK(discountAmt);
+    } else {
+      els.pbDiscountRow.style.display = 'none';
+    }
+
+    els.pbTotal.textContent = Math.round(total).toLocaleString('en-US');
+
+    return { total, qty: state.qty, areaSqFt, perimeterFt, mm, baseRate };
+  }
+
+  function render(){
+    const w = parseFloat(els.width.value) || 1;
+    const h = state.shape === 'circle' ? w : (parseFloat(els.height.value) || 1);
+    drawShape(state.shape, Math.max(w,2), Math.max(h,2));
+    const priceResult = computePrice();
+    updateQuoteButtons(priceResult);
+  }
+
+  function applyLanguage(lang){
+    state.lang = lang;
+    const t = I18N[lang];
+    els.langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+
+    document.getElementById('brand-sub').textContent = t.brandSub;
+    document.getElementById('lbl-spec').textContent = t.lblSpec;
+    document.getElementById('lbl-tolerance').textContent = t.lblTolerance;
+    document.getElementById('tolerance-val').textContent = t.toleranceVal;
+    document.getElementById('lbl-ship').textContent = t.lblShip;
+    document.getElementById('ship-val').textContent = t.shipVal;
+    els.navLinks.forEach(a => { a.textContent = t.nav[a.dataset.i18nNav]; });
+    document.getElementById('panel1-title').textContent = t.panel1;
+    document.getElementById('lbl-shape-section').textContent = t.shapeSection;
+    els.shapeLabels.forEach(s => { s.textContent = t.shapes[s.dataset.i18nShape]; });
+    els.unitW.textContent = t.unitIn;
+    els.unitH.textContent = t.unitIn;
+    document.getElementById('lbl-glass-type').textContent = t.lblGlassType;
+    document.getElementById('lbl-thickness').textContent = t.lblThickness;
+    document.getElementById('lbl-tempering').textContent = t.lblTempering;
+    document.getElementById('lbl-edge').textContent = t.lblEdge;
+    document.getElementById('lbl-film').textContent = t.lblFilm;
+    document.getElementById('lbl-crate').textContent = t.lblCrate;
+    document.getElementById('lbl-holes').textContent = t.lblHoles;
+    document.getElementById('lbl-qty').textContent = t.lblQty;
+    document.getElementById('panel2-title').textContent = t.panel2;
+    document.getElementById('lbl-area').textContent = t.lblArea;
+    document.getElementById('lbl-perimeter').textContent = t.lblPerimeter;
+    document.getElementById('lbl-weight').textContent = t.lblWeight;
+    document.getElementById('panel3-title').textContent = t.panel3;
+    document.getElementById('lbl-material').textContent = t.lblMaterial;
+    document.getElementById('lbl-temper-row').textContent = t.lblTemperRow;
+    document.getElementById('lbl-edge-row').textContent = t.lblEdgeRow;
+    document.getElementById('lbl-holes-row').textContent = t.lblHolesRow;
+    document.getElementById('lbl-film-row').textContent = t.lblFilmRow;
+    document.getElementById('lbl-crate-row').textContent = t.lblCrateRow;
+    document.getElementById('lbl-unit-price').textContent = t.lblUnitPrice;
+    document.getElementById('lbl-qty-row').textContent = t.lblQtyRow;
+    document.getElementById('lbl-discount').textContent = t.lblDiscount;
+    document.getElementById('lbl-total').textContent = t.lblTotal;
+    document.getElementById('min-note').textContent = t.minNote;
+    document.getElementById('lbl-first-time').textContent = t.firstTimeText;
+    document.getElementById('lbl-send-quote').textContent = t.sendQuoteLabel;
+    document.getElementById('lbl-tint-help').textContent = state.lang === 'zh' ? '了解更多 →' : 'Learn more →';
+    document.getElementById('lbl-edge-help').textContent = state.lang === 'zh' ? '了解更多 →' : 'Learn more →';
+    document.getElementById('qs-store1-name').textContent = t.store1;
+    document.getElementById('qs-store2-name').textContent = t.store2;
+    document.getElementById('qs-store3-name').textContent = t.store3;
+    document.getElementById('lbl-contact-banner').textContent = t.contactBanner;
+    document.getElementById('lbl-contact-banner-sub').textContent = t.contactBannerSub;
+    document.getElementById('footer-copy').textContent = t.footerCopy;
+    document.getElementById('footer-sister').innerHTML = t.footerSister.replace('le-relaxshower.com', '<a href="https://www.le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a>');
+
+    populateGlassTypes();
+    configureFieldsForShape(state.shape);
+    refreshDependentDropdowns();
+    render();
+  }
+
+  (function addMarkers(){
+    const ns = 'http://www.w3.org/2000/svg';
+    const defs = document.querySelector('#blueprint defs');
+    const marker = document.createElementNS(ns, 'marker');
+    marker.setAttribute('id','arrow');
+    marker.setAttribute('markerWidth','6');
+    marker.setAttribute('markerHeight','6');
+    marker.setAttribute('refX','3');
+    marker.setAttribute('refY','3');
+    marker.setAttribute('orient','auto');
+    const path = document.createElementNS(ns,'path');
+    path.setAttribute('d','M0,0 L6,3 L0,6 Z');
+    path.setAttribute('fill','#1C1F22');
+    marker.appendChild(path);
+    defs.appendChild(marker);
+  })();
+
+  els.shapeBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      els.shapeBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      state.shape = btn.dataset.shape;
+      configureFieldsForShape(state.shape);
+      populateEdges();
+      render();
+    });
+  });
+
+  [els.width, els.height].forEach(inp=>{
+    inp.addEventListener('input', render);
+  });
+  els.type.addEventListener('change', ()=>{ refreshDependentDropdowns(); render(); });
+  els.thickness.addEventListener('change', ()=>{ populateTempering(); populateEdges(); render(); });
+  els.tempering.addEventListener('change', render);
+  els.edge.addEventListener('change', render);
+  els.film.addEventListener('change', render);
+  els.crate.addEventListener('change', render);
+
+  document.getElementById('holes-minus').addEventListener('click', ()=>{
+    state.holes = Math.max(0, state.holes-1);
+    els.holesVal.textContent = state.holes;
+    render();
+  });
+  document.getElementById('holes-plus').addEventListener('click', ()=>{
+    state.holes = Math.min(4, state.holes+1);
+    els.holesVal.textContent = state.holes;
+    render();
+  });
+  document.getElementById('qty-minus').addEventListener('click', ()=>{
+    state.qty = Math.max(1, state.qty-1);
+    els.qtyVal.textContent = state.qty;
+    render();
+  });
+  document.getElementById('qty-plus').addEventListener('click', ()=>{
+    state.qty = Math.min(999, state.qty+1);
+    els.qtyVal.textContent = state.qty;
+    render();
+  });
+
+  function updateQuoteButtons(priceResult){
+    const { total, qty, mm } = priceResult;
+    const shape = state.shape;
+    const w = parseFloat(els.width.value) || 0;
+    const h = shape === 'circle' ? w : (parseFloat(els.height.value) || 0);
+    const sizeStr = shape === 'circle' ? `⌀ ${w}"` : `${w}" × ${h}"`;
+
+    const typeKey = els.type.value;
+    const glassType = GLASS_TYPES[typeKey];
+    const temperKey = els.tempering.value;
+    const tempering = TEMPERING[temperKey];
+    const edgeKey = els.edge.value;
+    const edge = EDGE_FINISHES[edgeKey];
+    const shapeI18n = I18N.en.shapes;
+    const shapeI18nZh = I18N.zh.shapes;
+
+    const lines = [
+      `Quote for ${shapeI18n[shape]} Mirror ${shapeI18nZh[shape]}鏡子 (via website)`,
+      `Size 尺寸: ${sizeStr}`,
+      `Mirror Tint 鏡面顏色: ${glassType.en} ${glassType.zh}`,
+      `Thickness 厚度: ${mm}mm`,
+      `Tempering 鋼化: ${tempering.en} ${tempering.zh}`,
+      `Edge Finish 邊緣處理: ${edge.en} ${edge.zh}`
+    ];
+    if(state.holes > 0) lines.push(`Corner Holes 角孔數量: ${state.holes}`);
+    const filmRate = parseFloat(els.film.value) || 0;
+    if(filmRate > 0) lines.push(`Protective Film 保護膜: HK$${filmRate}/sqft`);
+    if(els.crate.checked) lines.push(`Wooden Crate 木箱包裝: Yes 有`);
+    lines.push(`Quantity 數量: ${qty}`);
+    lines.push(`Estimated Price 預估價格: HK$${Math.round(total).toLocaleString('en-US')}`);
+
+    const message = lines.join('\n');
+    const encoded = encodeURIComponent(message);
+
+    STORES.forEach((store, i) => {
+      const btn = els[`qsStore${i+1}`];
+      btn.href = `https://wa.me/${store.whatsapp}?text=${encoded}`;
+    });
+  }
+
+  els.langBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=> applyLanguage(btn.dataset.lang));
+  });
+
+  // init
+  applyLanguage(state.lang);
+})();
+</script>
+</body>
+</html>
