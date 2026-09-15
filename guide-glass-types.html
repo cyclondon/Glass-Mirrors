@@ -33,6 +33,15 @@
     --ok-green: #25D366;
   }
   *{ box-sizing: border-box; }
+  .visually-hidden{
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
   html,body{ margin:0; padding:0; }
   body{
     background: var(--bg);
@@ -486,8 +495,36 @@
   }
   .footer-banner{
     text-align:center;
-    padding: 34px 20px 26px;
+    padding: 0 0 26px;
     border-bottom: 1px solid var(--line);
+  }
+  .ticker-wrap{
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--text);
+    padding: 12px 0;
+    margin-bottom: 18px;
+  }
+  .ticker-track{
+    display: inline-flex;
+    animation: ticker-scroll 18s linear infinite;
+  }
+  .ticker-track span{
+    padding: 0 28px;
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  @keyframes ticker-scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{ animation: none; }
   }
   .footer-banner h2{
     font-family:'Archivo', 'Noto Sans TC', sans-serif;
@@ -777,36 +814,85 @@
     <a href="stores.html"  data-i18n-nav="stores">Our Stores</a>
     <a href="faq.html"  data-i18n-nav="faq">FAQ</a>
   </nav>
-  <p class="breadcrumb"><a href="mirror-configurator.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Glass Types</p>
-  <h1 class="page-title">Glass Types: A Complete Guide</h1>
+  <p class="breadcrumb"><a href="mirror-configurator.html" data-i18n="bcHome">Home</a> &rsaquo; <a href="guides.html" data-i18n="bcGuides">Guides</a> &rsaquo; <span data-i18n="bcThis">Glass Types</span></p>
+  <h1 class="page-title" data-i18n="h1">Glass Types: A Complete Guide</h1>
   <div class="article-body">
-    <p>Every option on our <a href="glass-configurator.html">glass configurator</a> is a form of safety glass — the difference is in clarity, privacy, and how each behaves if it ever breaks.</p>
+    <p data-i18n="intro">Every option on our <a href="glass-configurator.html">glass configurator</a> is a form of safety glass — the difference is in clarity, privacy, and how each behaves if it ever breaks.</p>
 
-    <h2>Clear Tempered</h2>
-    <p>Our standard glass — heat-treated (toughened) to be several times stronger than ordinary annealed glass. If it does break, it shatters into small, relatively blunt granules rather than sharp shards, making it the safety standard for most residential glass panels. This is the most economical option and suits the majority of projects.</p>
+    <h2 data-i18n="h2-1">Clear Tempered</h2>
+    <p data-i18n="p1">Our standard glass — heat-treated (toughened) to be several times stronger than ordinary annealed glass. If it does break, it shatters into small, relatively blunt granules rather than sharp shards, making it the safety standard for most residential glass panels. This is the most economical option and suits the majority of projects.</p>
 
-    <h2>Frosted Tempered</h2>
-    <p>The same tempered strength as Clear, with an acid-etched or sandblasted surface treatment that diffuses light and obscures direct visibility through the glass. Popular for bathroom partitions, office privacy panels, and anywhere you want light without a clear view through.</p>
+    <h2 data-i18n="h2-2">Frosted Tempered</h2>
+    <p data-i18n="p2">The same tempered strength as Clear, with an acid-etched or sandblasted surface treatment that diffuses light and obscures direct visibility through the glass. Popular for bathroom partitions, office privacy panels, and anywhere you want light without a clear view through.</p>
 
-    <h2>Low-Iron (Ultra Clear)</h2>
-    <p>Standard glass has a natural green tint, most visible along thick edges or when stacked. Low-iron glass uses a purer sand formulation to remove that tint, giving a truly colourless, water-clear appearance. It costs more than standard clear glass, but is worth it for display cases, feature panels, or anywhere true colour rendition matters.</p>
+    <h2 data-i18n="h2-3">Low-Iron (Ultra Clear)</h2>
+    <p data-i18n="p3">Standard glass has a natural green tint, most visible along thick edges or when stacked. Low-iron glass uses a purer sand formulation to remove that tint, giving a truly colourless, water-clear appearance. It costs more than standard clear glass, but is worth it for display cases, feature panels, or anywhere true colour rendition matters.</p>
 
-    <h2>Laminated Safety Glass</h2>
-    <p>Two (or more) layers of glass bonded around a plastic interlayer. Both tempered and laminated glass are classed as "safety glass," but they behave very differently if they break: tempered glass shatters into separate granules, while laminated glass cracks but the pieces stay bonded to the interlayer instead of falling apart. This makes laminated glass the safer choice for overhead glazing, skylights, and areas where you want the broken pieces to stay in place rather than fall. It's priced higher than tempered glass to reflect the extra material and lamination process.</p>
+    <h2 data-i18n="h2-4">Laminated Safety Glass</h2>
+    <p data-i18n="p4">Two (or more) layers of glass bonded around a plastic interlayer. Both tempered and laminated glass are classed as "safety glass," but they behave very differently if they break: tempered glass shatters into separate granules, while laminated glass cracks but the pieces stay bonded to the interlayer instead of falling apart. This makes laminated glass the safer choice for overhead glazing, skylights, and areas where you want the broken pieces to stay in place rather than fall. It's priced higher than tempered glass to reflect the extra material and lamination process.</p>
 
-    <h2>Which glass should you choose?</h2>
-    <p>For most everyday panels, Clear Tempered is the right default — it's the most economical safety glass and suits the widest range of uses. Choose Frosted Tempered when you need privacy without blocking light. Choose Low-Iron when true, uncoloured clarity matters more than cost. Choose Laminated when the application calls for the glass to stay intact even if it cracks — typically overhead or structural applications, or wherever extra peace of mind is worth the premium.</p>
+    <h2 data-i18n="h2-5">Which glass should you choose?</h2>
+    <p data-i18n="p5">For most everyday panels, Clear Tempered is the right default — it's the most economical safety glass and suits the widest range of uses. Choose Frosted Tempered when you need privacy without blocking light. Choose Low-Iron when true, uncoloured clarity matters more than cost. Choose Laminated when the application calls for the glass to stay intact even if it cracks — typically overhead or structural applications, or wherever extra peace of mind is worth the premium.</p>
 
-    <p>Looking for a mirror instead of clear glass? See our <a href="guide-mirror-tints.html">mirror tints guide</a>. Once you've picked a glass type, head to the <a href="glass-configurator.html">configurator</a> for an instant price on your size and shape.</p>
+    <p data-i18n="closing">Looking for a mirror instead of clear glass? See our <a href="guide-mirror-tints.html">mirror tints guide</a>. Once you've picked a glass type, head to the <a href="glass-configurator.html">configurator</a> for an instant price on your size and shape.</p>
 
-    <a class="back-to-guides" href="guides.html">&larr; All Guides</a>
+    <a class="back-to-guides" href="guides.html" data-i18n="back">&larr; All Guides</a>
   </div>
+
+  <script>
+    window.PAGE_I18N = {
+      en: {
+        bcHome: 'Home', bcGuides: 'Guides', bcThis: 'Glass Types',
+        h1: 'Glass Types: A Complete Guide',
+        back: '← All Guides',
+        'intro': 'Every option on our <a href="glass-configurator.html">glass configurator</a> is a form of safety glass — the difference is in clarity, privacy, and how each behaves if it ever breaks.',
+        'h2-1': 'Clear Tempered',
+        'p1': 'Our standard glass — heat-treated (toughened) to be several times stronger than ordinary annealed glass. If it does break, it shatters into small, relatively blunt granules rather than sharp shards, making it the safety standard for most residential glass panels. This is the most economical option and suits the majority of projects.',
+        'h2-2': 'Frosted Tempered',
+        'p2': 'The same tempered strength as Clear, with an acid-etched or sandblasted surface treatment that diffuses light and obscures direct visibility through the glass. Popular for bathroom partitions, office privacy panels, and anywhere you want light without a clear view through.',
+        'h2-3': 'Low-Iron (Ultra Clear)',
+        'p3': 'Standard glass has a natural green tint, most visible along thick edges or when stacked. Low-iron glass uses a purer sand formulation to remove that tint, giving a truly colourless, water-clear appearance. It costs more than standard clear glass, but is worth it for display cases, feature panels, or anywhere true colour rendition matters.',
+        'h2-4': 'Laminated Safety Glass',
+        'p4': 'Two (or more) layers of glass bonded around a plastic interlayer. Both tempered and laminated glass are classed as "safety glass," but they behave very differently if they break: tempered glass shatters into separate granules, while laminated glass cracks but the pieces stay bonded to the interlayer instead of falling apart. This makes laminated glass the safer choice for overhead glazing, skylights, and areas where you want the broken pieces to stay in place rather than fall. It\'s priced higher than tempered glass to reflect the extra material and lamination process.',
+        'h2-5': 'Which glass should you choose?',
+        'p5': "For most everyday panels, Clear Tempered is the right default — it's the most economical safety glass and suits the widest range of uses. Choose Frosted Tempered when you need privacy without blocking light. Choose Low-Iron when true, uncoloured clarity matters more than cost. Choose Laminated when the application calls for the glass to stay intact even if it cracks — typically overhead or structural applications, or wherever extra peace of mind is worth the premium.",
+        'closing': 'Looking for a mirror instead of clear glass? See our <a href="guide-mirror-tints.html">mirror tints guide</a>. Once you\'ve picked a glass type, head to the <a href="glass-configurator.html">configurator</a> for an instant price on your size and shape.'
+      },
+      zh: {
+        bcHome: '首頁', bcGuides: '指南', bcThis: '玻璃種類',
+        h1: '玻璃種類完整指南',
+        back: '← 所有指南',
+        'intro': '我們<a href="glass-configurator.html">玻璃配置器</a>上的每個選項均屬安全玻璃 — 差異在於透明度、私隱度，以及破裂時的表現。',
+        'h2-1': '透明鋼化',
+        'p1': '我們的標準玻璃 — 經熱處理（鋼化）強化，強度較一般退火玻璃高出數倍。破裂時會碎成細小、較鈍的顆粒而非尖銳碎片，是大部分住宅玻璃的安全標準。此為最經濟的選擇，適合大部分項目。',
+        'h2-2': '霧面鋼化',
+        'p2': '強度與透明鋼化玻璃相同，表面經酸蝕或噴砂處理，令光線柔和散射並遮擋視線。常用於浴室間隔、辦公室私隱屏風，以及任何需要採光但不欲被看穿的地方。',
+        'h2-3': '低鐵（超白）',
+        'p3': '一般玻璃帶有天然綠色調，於厚邊或堆疊時尤為明顯。低鐵玻璃採用更純淨的原料配方，去除該綠色調，呈現真正無色、清澈的外觀。價錢較一般透明玻璃高，但適用於展示櫃、特色板材，或任何講求真實色彩還原的場合。',
+        'h2-4': '夾層安全玻璃',
+        'p4': '由兩層（或以上）玻璃夾住膠膜黏合而成。鋼化玻璃及夾層玻璃均屬「安全玻璃」，但破裂時表現截然不同：鋼化玻璃會碎成獨立顆粒，而夾層玻璃則會裂開但碎片仍黏附於膠膜上，不會散落。因此夾層玻璃更適合天窗、上蓋玻璃，或任何希望碎片保持原位而非跌落的場合。由於物料及夾層工序成本較高，價錢亦高於鋼化玻璃。',
+        'h2-5': '應該選擇哪種玻璃？',
+        'p5': '對於一般日常用途，透明鋼化玻璃是預設之選 — 屬最經濟的安全玻璃，適用範圍最廣。需要私隱但不欲阻擋光線時，選擇霧面鋼化。講求真正無色清澈多於價錢時，選擇低鐵玻璃。若應用場合要求玻璃破裂後仍保持完整 — 例如天窗或結構應用，或任何值得多付一點以換取安心的場合 — 則選擇夾層玻璃。',
+        'closing': '想找鏡子而非透明玻璃？請見<a href="guide-mirror-tints.html">鏡面顏色指南</a>。選定玻璃種類後，請前往<a href="glass-configurator.html">配置器</a>，即時為您的尺寸及形狀獲得報價。'
+      }
+    };
+  </script>
 
 </div>
 
 <footer class="site-footer">
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+    </div>
+  </div>
   <div class="footer-banner">
-    <h2 id="lbl-contact-banner">Contact Us Now to Order</h2>
+    <h2 id="lbl-contact-banner" class="visually-hidden">Contact Us Now to Order</h2>
     <p id="lbl-contact-banner-sub">Get in touch to confirm pricing and place your order.</p>
   </div>
 
@@ -816,7 +902,7 @@
       <p class="store-address">G/F, 8-10 Larch Street, Tai Kok Tsui, Kowloon</p>
       <div class="store-actions">
         <a href="tel:+85223931419">2393 1419</a>
-        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -824,7 +910,7 @@
       <p class="store-address">Shop 2A &amp; B, G/F, Ming Fat Industrial Centre, 1 Kin Fat Street, Tuen Mun, New Territories</p>
       <div class="store-actions">
         <a href="tel:+85226187462">2618 7462</a>
-        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -832,7 +918,7 @@
       <p class="store-address">Shop A, G/F, Block 1, Kin Ho Industrial Building, 14-24 Au Pui Wan Street, Fo Tan</p>
       <div class="store-actions">
         <a href="tel:+85235808136">3580 8136</a>
-        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -867,6 +953,8 @@
 
   const navLinks = document.querySelectorAll('[data-i18n-nav]');
   const langBtns = document.querySelectorAll('#lang-toggle button');
+  const pageEls = document.querySelectorAll('[data-i18n]');
+  const pageI18N = window.PAGE_I18N || null;
 
   function applyLanguage(lang){
     const t = I18N[lang];
@@ -884,6 +972,12 @@
     const fc = document.getElementById('footer-copy'); if(fc) fc.textContent = t.footerCopy;
     const fs = document.getElementById('footer-sister');
     if(fs) fs.innerHTML = t.footerSister.replace('le-relaxshower.com', '<a href="https://www.le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a>');
+    if(pageI18N && pageI18N[lang]){
+      pageEls.forEach(el => {
+        const key = el.dataset.i18n;
+        if(pageI18N[lang][key] !== undefined) el.textContent = pageI18N[lang][key];
+      });
+    }
   }
 
   langBtns.forEach(btn=>{

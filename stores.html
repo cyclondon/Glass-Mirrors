@@ -33,6 +33,15 @@
     --ok-green: #25D366;
   }
   *{ box-sizing: border-box; }
+  .visually-hidden{
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
   html,body{ margin:0; padding:0; }
   body{
     background: var(--bg);
@@ -486,8 +495,36 @@
   }
   .footer-banner{
     text-align:center;
-    padding: 34px 20px 26px;
+    padding: 0 0 26px;
     border-bottom: 1px solid var(--line);
+  }
+  .ticker-wrap{
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--text);
+    padding: 12px 0;
+    margin-bottom: 18px;
+  }
+  .ticker-track{
+    display: inline-flex;
+    animation: ticker-scroll 18s linear infinite;
+  }
+  .ticker-track span{
+    padding: 0 28px;
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  @keyframes ticker-scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{ animation: none; }
   }
   .footer-banner h2{
     font-family:'Archivo', 'Noto Sans TC', sans-serif;
@@ -783,25 +820,25 @@
     <a href="stores.html" class="active" data-i18n-nav="stores">Our Stores</a>
     <a href="faq.html"  data-i18n-nav="faq">FAQ</a>
   </nav>
-  <p class="breadcrumb"><a href="mirror-configurator.html">Home</a> &rsaquo; Our Stores</p>
-  <h1 class="page-title">Our Stores</h1>
-  <p class="page-intro">Visit us in person to see Guardian Glass mirror samples up close — three showrooms across Hong Kong.</p>
+  <p class="breadcrumb"><a href="mirror-configurator.html" data-i18n="bcHome">Home</a> &rsaquo; <span data-i18n="bcStores">Our Stores</span></p>
+  <h1 class="page-title" data-i18n="h1">Our Stores</h1>
+  <p class="page-intro" data-i18n="intro">Visit us in person to see Guardian Glass mirror samples up close — three showrooms across Hong Kong.</p>
 
-  <p class="page-intro-wide"><strong style="color:var(--text);">More than glass &amp; mirrors.</strong> 升威 LE-RELAX is a comprehensive aluminium, glass and hardware fabricator. Beyond glass and mirrors, we also specialise in custom shower screens and doors (see <a href="https://le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a>) and aluminium windows and doors, with our own glass processing machinery in-house. For our full range and factory capabilities, visit <a href="https://www.le-relax.co" target="_blank" rel="noopener">www.le-relax.co</a>.</p>
+  <p class="page-intro-wide"><strong style="color:var(--text);" data-i18n="moreTitle">More than glass &amp; mirrors.</strong> <span data-i18n="moreBody">升威 LE-RELAX is a comprehensive aluminium, glass and hardware fabricator. Beyond glass and mirrors, we also specialise in custom shower screens and doors (see le-relaxshower.com) and aluminium windows and doors, with our own glass processing machinery in-house. For our full range and factory capabilities, visit www.le-relax.co.</span></p>
 
   <div class="store-full">
     <img src="https://le-relaxshower.com/assets/stores/tkt.jpg" alt="升威 LE-RELAX Tai Kok Tsui, Kowloon showroom">
     <div class="store-full-body">
-      <h3 id="sf-store1-name">Tai Kok Tsui, Kowloon</h3>
+      <h3 id="sf-store1-name" data-i18n="store1name">Tai Kok Tsui, Kowloon</h3>
       <p class="addr">G/F, 8-10 Larch Street, Tai Kok Tsui, Kowloon</p>
       <p class="store-meta">
-        <b>Opening hours:</b> Mon–Fri 9:00am–5:30pm, Sat 9:00am–3:00pm &middot; Closed Sunday<br>
-        <b>Getting there:</b> Mong Kok, Mong Kok East, Prince Edward and Olympic MTR Stations — about 8 minutes' walk.<br>
-        <b>On display:</b> Guardian Glass mirror tint &amp; edge finish samples
+        <b data-i18n="lblHours">Opening hours:</b> <span data-i18n="hours1">Mon–Fri 9:00am–5:30pm, Sat 9:00am–3:00pm &middot; Closed Sunday</span><br>
+        <b data-i18n="lblGetting">Getting there:</b> <span data-i18n="getting1">Mong Kok, Mong Kok East, Prince Edward and Olympic MTR Stations — about 8 minutes' walk.</span><br>
+        <b data-i18n="lblDisplay">On display:</b> <span data-i18n="display1">Guardian Glass mirror tint &amp; edge finish samples</span>
       </p>
       <div class="store-actions">
         <a href="tel:+85223931419">2393 1419</a>
-        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <div class="store-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.851708305282!2d114.1651675!3d22.321447400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404015ac2f5eb47%3A0xaa18d7c8ebfef77c!2sB%20D%20HOUSE%20LIMITED!5e0!3m2!1sen!2sjp!4v1787879676199!5m2!1sen!2sjp" title="Map to Tai Kok Tsui showroom" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -812,16 +849,16 @@
   <div class="store-full">
     <img src="https://le-relaxshower.com/assets/stores/tm.jpg" alt="升威 LE-RELAX Tuen Mun, New Territories showroom">
     <div class="store-full-body">
-      <h3 id="sf-store2-name">Tuen Mun, New Territories</h3>
+      <h3 id="sf-store2-name" data-i18n="store2name">Tuen Mun, New Territories</h3>
       <p class="addr">Shop 2A &amp; B, G/F, Ming Fat Industrial Centre, 1 Kin Fat Street, Tuen Mun, New Territories</p>
       <p class="store-meta">
-        <b>Opening hours:</b> Mon–Fri 9:00am–5:30pm, Sat 9:00am–3:00pm &middot; Closed Sunday<br>
-        <b>Getting there:</b> Tuen Mun MTR Station — about 10 minutes' walk.<br>
-        <b>On display:</b> Guardian Glass mirror tint &amp; edge finish samples
+        <b data-i18n="lblHours">Opening hours:</b> <span data-i18n="hours2">Mon–Fri 9:00am–5:30pm, Sat 9:00am–3:00pm &middot; Closed Sunday</span><br>
+        <b data-i18n="lblGetting">Getting there:</b> <span data-i18n="getting2">Tuen Mun MTR Station — about 10 minutes' walk.</span><br>
+        <b data-i18n="lblDisplay">On display:</b> <span data-i18n="display2">Guardian Glass mirror tint &amp; edge finish samples</span>
       </p>
       <div class="store-actions">
         <a href="tel:+85226187462">2618 7462</a>
-        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <div class="store-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.8832177225645!2d113.9653412753274!3d22.395759539428457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403fb491983fdcf%3A0xdb07049ed6683aa7!2sLe-Relax%20Aluminium%20Glass%20%26%20Hardware%20Products%20Company%20Limited!5e0!3m2!1sen!2sjp!4v1787879781275!5m2!1sen!2sjp" title="Map to Tuen Mun showroom" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -832,16 +869,16 @@
   <div class="store-full">
     <img src="https://le-relaxshower.com/assets/stores/ft.jpg" alt="升威 LE-RELAX Fo Tan, New Territories showroom">
     <div class="store-full-body">
-      <h3 id="sf-store3-name">Fo Tan, New Territories</h3>
+      <h3 id="sf-store3-name" data-i18n="store3name">Fo Tan, New Territories</h3>
       <p class="addr">Shop A, G/F, Block 1, Kin Ho Industrial Building, 14-24 Au Pui Wan Street, Fo Tan</p>
       <p class="store-meta">
-        <b>Opening hours:</b> Mon–Fri 9:00am–5:30pm, Sat 9:00am–3:00pm &middot; Closed Sunday<br>
-        <b>Getting there:</b> Fo Tan MTR Station — about 6 minutes' walk.<br>
-        <b>On display:</b> Guardian Glass mirror tint &amp; edge finish samples
+        <b data-i18n="lblHours">Opening hours:</b> <span data-i18n="hours3">Mon–Fri 9:00am–5:30pm, Sat 9:00am–3:00pm &middot; Closed Sunday</span><br>
+        <b data-i18n="lblGetting">Getting there:</b> <span data-i18n="getting3">Fo Tan MTR Station — about 6 minutes' walk.</span><br>
+        <b data-i18n="lblDisplay">On display:</b> <span data-i18n="display3">Guardian Glass mirror tint &amp; edge finish samples</span>
       </p>
       <div class="store-actions">
         <a href="tel:+85235808136">3580 8136</a>
-        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <div class="store-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.8259341404205!2d114.1924498753275!3d22.397918539349874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340407ed0721dbd7%3A0xa73b62043dcdf1c7!2sLe-Relax%20Aluminium%20Glass%20%26%20Hardware%20Products%20Company%20Limited!5e0!3m2!1sen!2sjp!4v1787879746019!5m2!1sen!2sjp" title="Map to Fo Tan showroom" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -849,11 +886,62 @@
     </div>
   </div>
 
+  <script>
+    window.PAGE_I18N = {
+      en: {
+        bcHome: 'Home', bcStores: 'Our Stores',
+        h1: 'Our Stores',
+        intro: 'Visit us in person to see Guardian Glass mirror samples up close — three showrooms across Hong Kong.',
+        moreTitle: 'More than glass & mirrors.',
+        moreBody: '升威 LE-RELAX is a comprehensive aluminium, glass and hardware fabricator. Beyond glass and mirrors, we also specialise in custom shower screens and doors (see le-relaxshower.com) and aluminium windows and doors, with our own glass processing machinery in-house. For our full range and factory capabilities, visit www.le-relax.co.',
+        store1name: 'Tai Kok Tsui, Kowloon', store2name: 'Tuen Mun, New Territories', store3name: 'Fo Tan, New Territories',
+        lblHours: 'Opening hours:', lblGetting: 'Getting there:', lblDisplay: 'On display:',
+        hours1: 'Mon–Fri 9:00am–5:30pm, Sat 9:00am–3:00pm · Closed Sunday',
+        hours2: 'Mon–Fri 9:00am–5:30pm, Sat 9:00am–3:00pm · Closed Sunday',
+        hours3: 'Mon–Fri 9:00am–5:30pm, Sat 9:00am–3:00pm · Closed Sunday',
+        getting1: 'Mong Kok, Mong Kok East, Prince Edward and Olympic MTR Stations — about 8 minutes\' walk.',
+        getting2: 'Tuen Mun MTR Station — about 10 minutes\' walk.',
+        getting3: 'Fo Tan MTR Station — about 6 minutes\' walk.',
+        display1: 'Guardian Glass mirror tint & edge finish samples',
+        display2: 'Guardian Glass mirror tint & edge finish samples',
+        display3: 'Guardian Glass mirror tint & edge finish samples'
+      },
+      zh: {
+        bcHome: '首頁', bcStores: '分店地址',
+        h1: '分店地址',
+        intro: '歡迎親臨本店，近距離觀看 Guardian Glass 鏡面樣本 — 香港三間展示室。',
+        moreTitle: '不只玻璃及鏡子。',
+        moreBody: '升威 LE-RELAX 是一間全面的鉱質、玻璃及五金製造商。除玻璃及鏡子外，我們亦專注於訂製洗澡門（請見 le-relaxshower.com）及鉱質窗門，並擁有自己的玻璃加工機械。欲了解我們全部系列及工廠產能，請瀏覽 www.le-relax.co。',
+        store1name: '大角咀，九龍', store2name: '屯門，新界', store3name: '火炭，新界',
+        lblHours: '営業時間：', lblGetting: '前往方式：', lblDisplay: '展示品：',
+        hours1: '週一至五 上塈9時至下塈5時30分，週六 上塈9時至下塈3時 · 週日休息',
+        hours2: '週一至五 上塈9時至下塈5時30分，週六 上塈9時至下塈3時 · 週日休息',
+        hours3: '週一至五 上塈9時至下塈5時30分，週六 上塈9時至下塈3時 · 週日休息',
+        getting1: '旺角、旺角東、太子及奧運站 — 徒步約8分鐘。',
+        getting2: '屯門站 — 徒步約10分鐘。',
+        getting3: '火炭站 — 徒步約6分鐘。',
+        display1: 'Guardian Glass 鏡面顏色及邊緣處理樣本',
+        display2: 'Guardian Glass 鏡面顏色及邊緣處理樣本',
+        display3: 'Guardian Glass 鏡面顏色及邊緣處理樣本'
+      }
+    };
+  </script>
+
 </div>
 
 <footer class="site-footer">
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+    </div>
+  </div>
   <div class="footer-banner">
-    <h2 id="lbl-contact-banner">Contact Us Now to Order</h2>
+    <h2 id="lbl-contact-banner" class="visually-hidden">Contact Us Now to Order</h2>
     <p id="lbl-contact-banner-sub">Get in touch to confirm pricing and place your order.</p>
   </div>
 
@@ -863,7 +951,7 @@
       <p class="store-address">G/F, 8-10 Larch Street, Tai Kok Tsui, Kowloon</p>
       <div class="store-actions">
         <a href="tel:+85223931419">2393 1419</a>
-        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -871,7 +959,7 @@
       <p class="store-address">Shop 2A &amp; B, G/F, Ming Fat Industrial Centre, 1 Kin Fat Street, Tuen Mun, New Territories</p>
       <div class="store-actions">
         <a href="tel:+85226187462">2618 7462</a>
-        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -879,7 +967,7 @@
       <p class="store-address">Shop A, G/F, Block 1, Kin Ho Industrial Building, 14-24 Au Pui Wan Street, Fo Tan</p>
       <div class="store-actions">
         <a href="tel:+85235808136">3580 8136</a>
-        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -914,6 +1002,8 @@
 
   const navLinks = document.querySelectorAll('[data-i18n-nav]');
   const langBtns = document.querySelectorAll('#lang-toggle button');
+  const pageEls = document.querySelectorAll('[data-i18n]');
+  const pageI18N = window.PAGE_I18N || null;
 
   function applyLanguage(lang){
     const t = I18N[lang];
@@ -931,6 +1021,12 @@
     const fc = document.getElementById('footer-copy'); if(fc) fc.textContent = t.footerCopy;
     const fs = document.getElementById('footer-sister');
     if(fs) fs.innerHTML = t.footerSister.replace('le-relaxshower.com', '<a href="https://www.le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a>');
+    if(pageI18N && pageI18N[lang]){
+      pageEls.forEach(el => {
+        const key = el.dataset.i18n;
+        if(pageI18N[lang][key] !== undefined) el.textContent = pageI18N[lang][key];
+      });
+    }
   }
 
   langBtns.forEach(btn=>{

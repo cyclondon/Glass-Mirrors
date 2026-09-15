@@ -33,6 +33,15 @@
     --ok-green: #25D366;
   }
   *{ box-sizing: border-box; }
+  .visually-hidden{
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
   html,body{ margin:0; padding:0; }
   body{
     background: var(--bg);
@@ -486,8 +495,36 @@
   }
   .footer-banner{
     text-align:center;
-    padding: 34px 20px 26px;
+    padding: 0 0 26px;
     border-bottom: 1px solid var(--line);
+  }
+  .ticker-wrap{
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--text);
+    padding: 12px 0;
+    margin-bottom: 18px;
+  }
+  .ticker-track{
+    display: inline-flex;
+    animation: ticker-scroll 18s linear infinite;
+  }
+  .ticker-track span{
+    padding: 0 28px;
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  @keyframes ticker-scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{ animation: none; }
   }
   .footer-banner h2{
     font-family:'Archivo', 'Noto Sans TC', sans-serif;
@@ -786,46 +823,89 @@
     <a href="faq.html"  data-i18n-nav="faq">FAQ</a>
   </nav>
   <div style="text-align:center; padding: 40px 0 10px;">
-    <h1 class="page-title" style="font-size:38px;">Custom Glass &amp; Mirrors</h1>
-    <p class="page-intro" style="margin-left:auto; margin-right:auto; text-align:center;">升威 LE-RELAX has been fabricating custom glass, mirrors, and aluminium products in Hong Kong since 1986. Configure your panel below and get a real, instant price &mdash; no account, no waiting for a callback.</p>
+    <h1 class="page-title" style="font-size:38px;" data-i18n="h1">Custom Glass &amp; Mirrors</h1>
+    <p class="page-intro" style="margin-left:auto; margin-right:auto; text-align:center;" data-i18n="intro">升威 LE-RELAX has been fabricating custom glass, mirrors, and aluminium products in Hong Kong since 1986. Configure your panel below and get a real, instant price — no account, no waiting for a callback.</p>
   </div>
 
   <div class="home-products-grid">
     <a class="guide-card" href="glass-configurator.html" style="padding: 30px 26px;">
-      <div class="guide-date">GLASS</div>
-      <h3 style="font-size: 22px;">Custom Glass Panels</h3>
-      <p>Clear, tinted, frosted, Low-E and low-iron glass in any shape or size. Choose tempering, edge finish, and drilling &mdash; get an instant HK$ quote.</p>
+      <div class="guide-date" data-i18n="tag1">GLASS</div>
+      <h3 style="font-size: 22px;" data-i18n="title1">Custom Glass Panels</h3>
+      <p data-i18n="desc1">Clear, tinted, frosted, Low-E and low-iron glass in any shape or size. Choose tempering, edge finish, and drilling — get an instant HK$ quote.</p>
     </a>
     <a class="guide-card" href="mirror-configurator.html" style="padding: 30px 26px;">
-      <div class="guide-date">MIRRORS &middot; 快靚鏡 FAI LENG GENG</div>
-      <h3 style="font-size: 22px;">Custom Mirrors</h3>
-      <p>Silver, Guardian Glass (Thailand), Grey, Bronze and Gold mirror tints. Same instant configurator, built for mirror-specific pricing.</p>
+      <div class="guide-date" data-i18n="tag2">MIRRORS &middot; 快靡鏡 FAI LENG GENG</div>
+      <h3 style="font-size: 22px;" data-i18n="title2">Custom Mirrors</h3>
+      <p data-i18n="desc2">Silver, Guardian Glass (Thailand), Grey, Bronze and Gold mirror tints. Same instant configurator, built for mirror-specific pricing.</p>
     </a>
   </div>
 
   <div class="home-links-grid">
     <a class="guide-card" href="guides.html">
-      <div class="guide-date">LEARN</div>
-      <h3 style="font-size:16px;">Buying Guides</h3>
-      <p>Glass types, mirror tints, edge finishes, and how to use the configurator.</p>
+      <div class="guide-date" data-i18n="tag3">LEARN</div>
+      <h3 style="font-size:16px;" data-i18n="title3">Buying Guides</h3>
+      <p data-i18n="desc3">Glass types, mirror tints, edge finishes, and how to use the configurator.</p>
     </a>
     <a class="guide-card" href="stores.html">
-      <div class="guide-date">VISIT</div>
-      <h3 style="font-size:16px;">Our Stores</h3>
-      <p>Three showrooms across Hong Kong &mdash; Tai Kok Tsui, Tuen Mun, and Fo Tan.</p>
+      <div class="guide-date" data-i18n="tag4">VISIT</div>
+      <h3 style="font-size:16px;" data-i18n="title4">Our Stores</h3>
+      <p data-i18n="desc4">Three showrooms across Hong Kong &mdash; Tai Kok Tsui, Tuen Mun, and Fo Tan.</p>
     </a>
     <a class="guide-card" href="faq.html">
-      <div class="guide-date">HELP</div>
-      <h3 style="font-size:16px;">FAQ</h3>
-      <p>Measuring, turnaround times, payment, and everything else people ask.</p>
+      <div class="guide-date" data-i18n="tag5">HELP</div>
+      <h3 style="font-size:16px;" data-i18n="title5">FAQ</h3>
+      <p data-i18n="desc5">Measuring, turnaround times, payment, and everything else people ask.</p>
     </a>
   </div>
+
+  <script>
+    window.PAGE_I18N = {
+      en: {
+        h1: 'Custom Glass & Mirrors',
+        intro: '升威 LE-RELAX has been fabricating custom glass, mirrors, and aluminium products in Hong Kong since 1986. Configure your panel below and get a real, instant price — no account, no waiting for a callback.',
+        tag1: 'GLASS', title1: 'Custom Glass Panels',
+        desc1: 'Clear, tinted, frosted, Low-E and low-iron glass in any shape or size. Choose tempering, edge finish, and drilling — get an instant HK$ quote.',
+        tag2: 'MIRRORS · 快靡鏡 FAI LENG GENG', title2: 'Custom Mirrors',
+        desc2: 'Silver, Guardian Glass (Thailand), Grey, Bronze and Gold mirror tints. Same instant configurator, built for mirror-specific pricing.',
+        tag3: 'LEARN', title3: 'Buying Guides',
+        desc3: 'Glass types, mirror tints, edge finishes, and how to use the configurator.',
+        tag4: 'VISIT', title4: 'Our Stores',
+        desc4: 'Three showrooms across Hong Kong — Tai Kok Tsui, Tuen Mun, and Fo Tan.',
+        tag5: 'HELP', title5: 'FAQ',
+        desc5: 'Measuring, turnaround times, payment, and everything else people ask.'
+      },
+      zh: {
+        h1: '定制玻璃及鏡子',
+        intro: '升威 LE-RELAX 自1986年起在香港從事訂製玻璃、鏡子及鉱質產品製造。在下方配置您的產品，即時獲得真實報價 — 無需開設帳戶，無需等候回覆。',
+        tag1: '玻璃', title1: '訂製玻璃',
+        desc1: '透明、有色、霧面、Low-E及低鐵玻璃，任何形狀或尺寸。選擇鋼化、邊緣處理及鑽孔 — 即時獲得港幣報價。',
+        tag2: '鏡子 · 快靡鏡 FAI LENG GENG', title2: '訂製鏡子',
+        desc2: '銀色、Guardian Glass（泰國）、灰色、茶色及金色鏡面。同樣的即時配置器，專為鏡子定價而設。',
+        tag3: '了解更多', title3: '選購指南',
+        desc3: '玻璃種類、鏡面顏色、邊緣處理，以及如何使用配置器。',
+        tag4: '親臨', title4: '分店地址',
+        desc4: '香港三間展示室 — 大角咀、屯門及火炭。',
+        tag5: '常見問題', title5: '常見問題',
+        desc5: '度量方法、製作時間、付款方式，以及其他常見問題。'
+      }
+    };
+  </script>
 
 </div>
 
 <footer class="site-footer">
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+    </div>
+  </div>
   <div class="footer-banner">
-    <h2 id="lbl-contact-banner">Contact Us Now to Order</h2>
+    <h2 id="lbl-contact-banner" class="visually-hidden">Contact Us Now to Order</h2>
     <p id="lbl-contact-banner-sub">Get in touch to confirm pricing and place your order.</p>
   </div>
 
@@ -835,7 +915,7 @@
       <p class="store-address">G/F, 8-10 Larch Street, Tai Kok Tsui, Kowloon</p>
       <div class="store-actions">
         <a href="tel:+85223931419">2393 1419</a>
-        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -843,7 +923,7 @@
       <p class="store-address">Shop 2A &amp; B, G/F, Ming Fat Industrial Centre, 1 Kin Fat Street, Tuen Mun, New Territories</p>
       <div class="store-actions">
         <a href="tel:+85226187462">2618 7462</a>
-        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -851,7 +931,7 @@
       <p class="store-address">Shop A, G/F, Block 1, Kin Ho Industrial Building, 14-24 Au Pui Wan Street, Fo Tan</p>
       <div class="store-actions">
         <a href="tel:+85235808136">3580 8136</a>
-        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -886,6 +966,8 @@
 
   const navLinks = document.querySelectorAll('[data-i18n-nav]');
   const langBtns = document.querySelectorAll('#lang-toggle button');
+  const pageEls = document.querySelectorAll('[data-i18n]');
+  const pageI18N = window.PAGE_I18N || null;
 
   function applyLanguage(lang){
     const t = I18N[lang];
@@ -903,6 +985,12 @@
     const fc = document.getElementById('footer-copy'); if(fc) fc.textContent = t.footerCopy;
     const fs = document.getElementById('footer-sister');
     if(fs) fs.innerHTML = t.footerSister.replace('le-relaxshower.com', '<a href="https://www.le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a>');
+    if(pageI18N && pageI18N[lang]){
+      pageEls.forEach(el => {
+        const key = el.dataset.i18n;
+        if(pageI18N[lang][key] !== undefined) el.textContent = pageI18N[lang][key];
+      });
+    }
   }
 
   langBtns.forEach(btn=>{

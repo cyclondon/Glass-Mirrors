@@ -33,6 +33,15 @@
     --ok-green: #25D366;
   }
   *{ box-sizing: border-box; }
+  .visually-hidden{
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
   html,body{ margin:0; padding:0; }
   body{
     background: var(--bg);
@@ -486,8 +495,36 @@
   }
   .footer-banner{
     text-align:center;
-    padding: 34px 20px 26px;
+    padding: 0 0 26px;
     border-bottom: 1px solid var(--line);
+  }
+  .ticker-wrap{
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--text);
+    padding: 12px 0;
+    margin-bottom: 18px;
+  }
+  .ticker-track{
+    display: inline-flex;
+    animation: ticker-scroll 18s linear infinite;
+  }
+  .ticker-track span{
+    padding: 0 28px;
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  @keyframes ticker-scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{ animation: none; }
   }
   .footer-banner h2{
     font-family:'Archivo', 'Noto Sans TC', sans-serif;
@@ -777,94 +814,195 @@
     <a href="stores.html"  data-i18n-nav="stores">Our Stores</a>
     <a href="faq.html" class="active" data-i18n-nav="faq">FAQ</a>
   </nav>
-  <p class="breadcrumb"><a href="mirror-configurator.html">Home</a> &rsaquo; FAQ</p>
-  <h1 class="page-title">FAQ</h1>
-  <p class="page-intro">Frequently asked questions about ordering custom mirrors.</p>
+  <p class="breadcrumb"><a href="mirror-configurator.html" data-i18n="bcHome">Home</a> &rsaquo; <span data-i18n="bcFaq">FAQ</span></p>
+  <h1 class="page-title" data-i18n="h1">FAQ</h1>
+  <p class="page-intro" data-i18n="intro">Frequently asked questions about ordering custom glass and mirrors.</p>
 
   <div class="faq-list">
     <div class="faq-item">
-      <p class="faq-q">How long has 升威 LE-RELAX been in business?</p>
-      <p class="faq-a">升威 LE-RELAX has been fabricating custom glass and aluminium products in Hong Kong since 1986. Our mirror line, 快靚鏡 Fai Leng Geng, uses Guardian Glass made in Thailand as standard, and our online configurator gives you a real price estimate in seconds, without needing to visit a showroom first.</p>
+      <p class="faq-q" data-i18n="q1">How long has 升威 LE-RELAX been in business?</p>
+      <p class="faq-a" data-i18n="a1">升威 LE-RELAX has been fabricating custom glass and aluminium products in Hong Kong since 1986. Our mirror line, 快靚鏡 Fai Leng Geng, uses Guardian Glass made in Thailand as standard, and our online configurator gives you a real price estimate in seconds, without needing to visit a showroom first.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Do you also make shower screens, windows and doors?</p>
-      <p class="faq-a">Yes. 升威 LE-RELAX is a comprehensive aluminium and glass fabrication company. Alongside glass and mirrors, we make custom shower screens and doors — see <a href="https://le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a> — as well as aluminium windows and architectural glass for residential and commercial projects.</p>
+      <p class="faq-q" data-i18n="q2">Do you also make shower screens, windows and doors?</p>
+      <p class="faq-a" data-i18n="a2">Yes. 升威 LE-RELAX is a comprehensive aluminium and glass fabrication company. Alongside glass and mirrors, we make custom shower screens and doors — see <a href="https://le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a> — as well as aluminium windows and architectural glass for residential and commercial projects.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Do you serve all areas of Hong Kong?</p>
-      <p class="faq-a">Yes — our service area covers the whole of Hong Kong. Visit any of our three showrooms in Tai Kok Tsui, Tuen Mun or Fo Tan to view samples, or use the online configurator for an instant price estimate from anywhere. See photos, addresses and a map for each showroom on our <a href="stores.html">Our Stores</a> page.</p>
+      <p class="faq-q" data-i18n="q3">Do you serve all areas of Hong Kong?</p>
+      <p class="faq-a" data-i18n="a3">Yes — our service area covers the whole of Hong Kong. Visit any of our three showrooms in Tai Kok Tsui, Tuen Mun or Fo Tan to view samples, or use the online configurator for an instant price estimate from anywhere. See photos, addresses and a map for each showroom on our <a href="stores.html">Our Stores</a> page.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Can I view physical mirror samples before ordering?</p>
-      <p class="faq-a">Yes. We encourage you to visit any of our three showrooms to see Guardian Glass tint samples and edge finishes in person before finalising your order.</p>
+      <p class="faq-q" data-i18n="q4">Can I view physical mirror samples before ordering?</p>
+      <p class="faq-a" data-i18n="a4">Yes. We encourage you to visit any of our three showrooms to see Guardian Glass tint samples and edge finishes in person before finalising your order.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What are your showroom opening hours?</p>
-      <p class="faq-a">Our showrooms in Tai Kok Tsui, Tuen Mun, and Fo Tan are open Monday–Friday 9:00am–5:30pm and Saturday 9:00am–3:00pm (closed Sunday). See our <a href="stores.html">Our Stores</a> page for directions to each.</p>
+      <p class="faq-q" data-i18n="q5">What are your showroom opening hours?</p>
+      <p class="faq-a" data-i18n="a5">Our showrooms in Tai Kok Tsui, Tuen Mun, and Fo Tan are open Monday–Friday 9:00am–5:30pm and Saturday 9:00am–3:00pm (closed Sunday). See our <a href="stores.html">Our Stores</a> page for directions to each.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">How much does a custom mirror cost?</p>
-      <p class="faq-a">Price depends on shape, size, tint, thickness, and edge finish. Use the <a href="mirror-configurator.html">online configurator</a> for an exact estimate based on your own measurements and choices — a small minimum billable area applies per panel (2 to 3 sq ft depending on shape), with volume discounts at 5+ and 10+ units.</p>
+      <p class="faq-q" data-i18n="q6">How much does a custom mirror cost?</p>
+      <p class="faq-a" data-i18n="a6">Price depends on shape, size, tint, thickness, and edge finish. Use the <a href="mirror-configurator.html">online configurator</a> for an exact estimate based on your own measurements and choices — a small minimum billable area applies per panel (2 to 3 sq ft depending on shape), with volume discounts at 5+ and 10+ units.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Do you provide free quotes?</p>
-      <p class="faq-a">Yes — our online configurator gives you a free, instant price estimate for any shape and size. Three WhatsApp buttons, one per showroom, stay visible as you configure and update automatically — just tap whichever store you'd like to send your spec to. See our <a href="guide-first-time.html">first-time guide</a> for a full walkthrough.</p>
+      <p class="faq-q" data-i18n="q7">Do you provide free quotes?</p>
+      <p class="faq-a" data-i18n="a7">Yes — our online configurator gives you a free, instant price estimate for any shape and size. Three WhatsApp buttons, one per showroom, stay visible as you configure and update automatically — just tap whichever store you'd like to send your spec to. See our <a href="guide-first-time.html">first-time guide</a> for a full walkthrough.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Can I get a custom size or shape?</p>
-      <p class="faq-a">Yes — the configurator supports rectangle, circle, oval, and triangle shapes at any size within the tool's range. If you need a shape not listed, contact any of our showrooms or send us a photo via WhatsApp and we'll let you know if we can fabricate it.</p>
+      <p class="faq-q" data-i18n="q8">Can I get a custom size or shape?</p>
+      <p class="faq-a" data-i18n="a8">Yes — the configurator supports rectangle, circle, oval, and triangle shapes at any size within the tool's range. If you need a shape not listed, contact any of our showrooms or send us a photo via WhatsApp and we'll let you know if we can fabricate it.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What mirror tints do you offer?</p>
-      <p class="faq-a">Silver, Guardian Glass (Thailand), Grey, Bronze, and Gold. See our <a href="guide-mirror-tints.html">mirror tints guide</a> for what each looks like and where it's typically used.</p>
+      <p class="faq-q" data-i18n="q9">What mirror tints do you offer?</p>
+      <p class="faq-a" data-i18n="a9">Silver, Guardian Glass (Thailand), Grey, Bronze, and Gold. See our <a href="guide-mirror-tints.html">mirror tints guide</a> for what each looks like and where it's typically used.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What edge finish should I choose?</p>
-      <p class="faq-a">It depends on whether the edge will be visible. Raw or Flat Seamed suit mirrors hidden inside a frame; Polished is the standard for frameless mirrors; Beveled is a premium decorative option. See our <a href="guide-edge-finishes.html">edge finishes guide</a> for the full breakdown.</p>
+      <p class="faq-q" data-i18n="q10">What edge finish should I choose?</p>
+      <p class="faq-a" data-i18n="a10">It depends on whether the edge will be visible. Raw or Flat Seamed suit mirrors hidden inside a frame; Polished is the standard for frameless mirrors; Beveled is a premium decorative option. See our <a href="guide-edge-finishes.html">edge finishes guide</a> for the full breakdown.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">How do I measure for my mirror?</p>
-      <p class="faq-a">Measure width and height (or diameter, for a circle) at the widest points of the space you're filling. If you're mounting inside a frame or recess, measure the opening rather than the wall space. A rough estimate is fine to get a starting price — our showroom team can help confirm exact measurements before we cut.</p>
+      <p class="faq-q" data-i18n="q11">How do I measure for my mirror?</p>
+      <p class="faq-a" data-i18n="a11">Measure width and height (or diameter, for a circle) at the widest points of the space you're filling. If you're mounting inside a frame or recess, measure the opening rather than the wall space. A rough estimate is fine to get a starting price — our showroom team can help confirm exact measurements before we cut.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What thickness should I choose?</p>
-      <p class="faq-a">Larger mirrors generally benefit from extra thickness for rigidity and to reduce visible flex or waviness in the reflection. Smaller mirrors can use a thinner, lighter option. Our showroom team can advise on the right thickness for your specific size on request.</p>
+      <p class="faq-q" data-i18n="q12">What thickness should I choose?</p>
+      <p class="faq-a" data-i18n="a12">Larger mirrors generally benefit from extra thickness for rigidity and to reduce visible flex or waviness in the reflection. Smaller mirrors can use a thinner, lighter option. Our showroom team can advise on the right thickness for your specific size on request.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What payment methods do you accept?</p>
-      <p class="faq-a">We accept major credit cards, bank transfers, FPS (Faster Payment System), and cash at any of our three Hong Kong showrooms. Payment details are confirmed directly with our staff once your order is placed.</p>
+      <p class="faq-q" data-i18n="q13">What payment methods do you accept?</p>
+      <p class="faq-a" data-i18n="a13">We accept major credit cards, bank transfers, FPS (Faster Payment System), and cash at any of our three Hong Kong showrooms. Payment details are confirmed directly with our staff once your order is placed.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What is your turnaround time for custom orders?</p>
-      <p class="faq-a">Because we handle our own fabrication, standard custom mirror orders are typically ready for pickup within a week, depending on tint, size, and finish. Contact your nearest showroom for current schedule estimates.</p>
+      <p class="faq-q" data-i18n="q14">What is your turnaround time for custom orders?</p>
+      <p class="faq-a" data-i18n="a14">Because we handle our own fabrication, standard custom mirror orders are typically ready for pickup within a week, depending on tint, size, and finish. Contact your nearest showroom for current schedule estimates.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Can I modify my order after it's been submitted?</p>
-      <p class="faq-a">Because fabrication begins quickly after confirmation, changes can only be accommodated if production hasn't started yet. If you need to adjust dimensions or finish, contact us via phone or WhatsApp immediately using the details below.</p>
+      <p class="faq-q" data-i18n="q15">Can I modify my order after it's been submitted?</p>
+      <p class="faq-a" data-i18n="a15">Because fabrication begins quickly after confirmation, changes can only be accommodated if production hasn't started yet. If you need to adjust dimensions or finish, contact us via phone or WhatsApp immediately using the details below.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Is installation included?</p>
-      <p class="faq-a">We supply and fabricate mirrors to your exact measurements, ready for fitting — installation isn't something we provide directly, but we're happy to recommend trusted installers. Ask in-store or via WhatsApp.</p>
+      <p class="faq-q" data-i18n="q16">Is installation included?</p>
+      <p class="faq-a" data-i18n="a16">We supply and fabricate mirrors to your exact measurements, ready for fitting — installation isn't something we provide directly, but we're happy to recommend trusted installers. Ask in-store or via WhatsApp.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What happens if my mirror arrives damaged or has a defect?</p>
-      <p class="faq-a">Inspect all glass upon receipt or collection. If you discover any transit damage, scratching, or silvering defect, notify us immediately via WhatsApp with clear photos before attempting installation, and we'll arrange a prompt replacement or adjustment for any verified issue.</p>
+      <p class="faq-q" data-i18n="q17">What happens if my mirror arrives damaged or has a defect?</p>
+      <p class="faq-a" data-i18n="a17">Inspect all glass upon receipt or collection. If you discover any transit damage, scratching, or silvering defect, notify us immediately via WhatsApp with clear photos before attempting installation, and we'll arrange a prompt replacement or adjustment for any verified issue.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">How do I clean and maintain my mirror?</p>
-      <p class="faq-a">Clean with a soft cloth and a mild glass cleaner, and avoid spraying cleaner directly onto the edges, where moisture can eventually reach the silvering and cause black spots over time. Avoid abrasive pads or ammonia-heavy chemicals.</p>
+      <p class="faq-q" data-i18n="q18">How do I clean and maintain my mirror?</p>
+      <p class="faq-a" data-i18n="a18">Clean with a soft cloth and a mild glass cleaner, and avoid spraying cleaner directly onto the edges, where moisture can eventually reach the silvering and cause black spots over time. Avoid abrasive pads or ammonia-heavy chemicals.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">Do you handle commercial or large-scale wholesale projects?</p>
-      <p class="faq-a">Yes. In addition to retail orders for homeowners, our parent operations fabricate and supply mirrors, glass, and aluminium products at scale for developers, contractors, and renovation projects across Hong Kong. Reach out to our team to discuss bulk requirements.</p>
+      <p class="faq-q" data-i18n="q19">Do you handle commercial or large-scale wholesale projects?</p>
+      <p class="faq-a" data-i18n="a19">Yes. In addition to retail orders for homeowners, our parent operations fabricate and supply mirrors, glass, and aluminium products at scale for developers, contractors, and renovation projects across Hong Kong. Reach out to our team to discuss bulk requirements.</p>
     </div>
   </div>
+
+  <script>
+    window.PAGE_I18N = {
+      en: {
+        bcHome: 'Home', bcFaq: 'FAQ',
+        h1: 'FAQ',
+        intro: 'Frequently asked questions about ordering custom glass and mirrors.',
+        q1: 'How long has 升威 LE-RELAX been in business?',
+        a1: '升威 LE-RELAX has been fabricating custom glass and aluminium products in Hong Kong since 1986. Our mirror line, 快靚鏡 Fai Leng Geng, uses Guardian Glass made in Thailand as standard, and our online configurator gives you a real price estimate in seconds, without needing to visit a showroom first.',
+        q2: 'Do you also make shower screens, windows and doors?',
+        a2: 'Yes. 升威 LE-RELAX is a comprehensive aluminium and glass fabrication company. Alongside glass and mirrors, we make custom shower screens and doors — see <a href="https://le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a> — as well as aluminium windows and architectural glass for residential and commercial projects.',
+        q3: 'Do you serve all areas of Hong Kong?',
+        a3: 'Yes — our service area covers the whole of Hong Kong. Visit any of our three showrooms in Tai Kok Tsui, Tuen Mun or Fo Tan to view samples, or use the online configurator for an instant price estimate from anywhere. See photos, addresses and a map for each showroom on our <a href="stores.html">Our Stores</a> page.',
+        q4: 'Can I view physical mirror samples before ordering?',
+        a4: 'Yes. We encourage you to visit any of our three showrooms to see Guardian Glass tint samples and edge finishes in person before finalising your order.',
+        q5: 'What are your showroom opening hours?',
+        a5: 'Our showrooms in Tai Kok Tsui, Tuen Mun, and Fo Tan are open Monday–Friday 9:00am–5:30pm and Saturday 9:00am–3:00pm (closed Sunday). See our <a href="stores.html">Our Stores</a> page for directions to each.',
+        q6: 'How much does a custom mirror cost?',
+        a6: 'Price depends on shape, size, tint, thickness, and edge finish. Use the <a href="mirror-configurator.html">online configurator</a> for an exact estimate based on your own measurements and choices — a small minimum billable area applies per panel (2 to 3 sq ft depending on shape), with volume discounts at 5+ and 10+ units.',
+        q7: 'Do you provide free quotes?',
+        a7: 'Yes — our online configurator gives you a free, instant price estimate for any shape and size. Three WhatsApp buttons, one per showroom, stay visible as you configure and update automatically — just tap whichever store you\'d like to send your spec to. See our <a href="guide-first-time.html">first-time guide</a> for a full walkthrough.',
+        q8: 'Can I get a custom size or shape?',
+        a8: 'Yes — the configurator supports rectangle, circle, oval, and triangle shapes at any size within the tool\'s range. If you need a shape not listed, contact any of our showrooms or send us a photo via WhatsApp and we\'ll let you know if we can fabricate it.',
+        q9: 'What mirror tints do you offer?',
+        a9: 'Silver, Guardian Glass (Thailand), Grey, Bronze, and Gold. See our <a href="guide-mirror-tints.html">mirror tints guide</a> for what each looks like and where it\'s typically used.',
+        q10: 'What edge finish should I choose?',
+        a10: 'It depends on whether the edge will be visible. Raw or Flat Seamed suit mirrors hidden inside a frame; Polished is the standard for frameless mirrors; Beveled is a premium decorative option. See our <a href="guide-edge-finishes.html">edge finishes guide</a> for the full breakdown.',
+        q11: 'How do I measure for my mirror?',
+        a11: 'Measure width and height (or diameter, for a circle) at the widest points of the space you\'re filling. If you\'re mounting inside a frame or recess, measure the opening rather than the wall space. A rough estimate is fine to get a starting price — our showroom team can help confirm exact measurements before we cut.',
+        q12: 'What thickness should I choose?',
+        a12: 'Larger mirrors generally benefit from extra thickness for rigidity and to reduce visible flex or waviness in the reflection. Smaller mirrors can use a thinner, lighter option. Our showroom team can advise on the right thickness for your specific size on request.',
+        q13: 'What payment methods do you accept?',
+        a13: 'We accept major credit cards, bank transfers, FPS (Faster Payment System), and cash at any of our three Hong Kong showrooms. Payment details are confirmed directly with our staff once your order is placed.',
+        q14: 'What is your turnaround time for custom orders?',
+        a14: 'Because we handle our own fabrication, standard custom mirror orders are typically ready for pickup within a week, depending on tint, size, and finish. Contact your nearest showroom for current schedule estimates.',
+        q15: 'Can I modify my order after it\'s been submitted?',
+        a15: 'Because fabrication begins quickly after confirmation, changes can only be accommodated if production hasn\'t started yet. If you need to adjust dimensions or finish, contact us via phone or WhatsApp immediately using the details below.',
+        q16: 'Is installation included?',
+        a16: 'We supply and fabricate mirrors to your exact measurements, ready for fitting — installation isn\'t something we provide directly, but we\'re happy to recommend trusted installers. Ask in-store or via WhatsApp.',
+        q17: 'What happens if my mirror arrives damaged or has a defect?',
+        a17: 'Inspect all glass upon receipt or collection. If you discover any transit damage, scratching, or silvering defect, notify us immediately via WhatsApp with clear photos before attempting installation, and we\'ll arrange a prompt replacement or adjustment for any verified issue.',
+        q18: 'How do I clean and maintain my mirror?',
+        a18: 'Clean with a soft cloth and a mild glass cleaner, and avoid spraying cleaner directly onto the edges, where moisture can eventually reach the silvering and cause black spots over time. Avoid abrasive pads or ammonia-heavy chemicals.',
+        q19: 'Do you handle commercial or large-scale wholesale projects?',
+        a19: 'Yes. In addition to retail orders for homeowners, our parent operations fabricate and supply mirrors, glass, and aluminium products at scale for developers, contractors, and renovation projects across Hong Kong. Reach out to our team to discuss bulk requirements.'
+      },
+      zh: {
+        bcHome: '首頁', bcFaq: '常見問題',
+        h1: '常見問題',
+        intro: '關於訂購訂製玻璃及鏡子的常見問題。',
+        q1: '升威 LE-RELAX 經營了多久？',
+        a1: '升威 LE-RELAX 自1986年起在香港從事訂製玻璃及鋁質產品製造。我們的鏡子系列「快靚鏡 Fai Leng Geng」以泰國製造的 Guardian Glass 作為標準用料，而我們的網上配置器可在數秒內為您提供真實報價，無需先親臨分店。',
+        q2: '你們也製造浴屏、窗戶及門嗎？',
+        a2: '是的。升威 LE-RELAX 是一間全面的鋁質及玻璃製造公司。除玻璃及鏡子外，我們亦訂製浴屏及浴室門 — 請見 <a href="https://le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a> — 以及鋁窗和建築玻璃，適用於住宅及商業項目。',
+        q3: '你們的服務範圍是否覆蓋全香港？',
+        a3: '是的 — 我們的服務範圍覆蓋全香港。歡迎親臨大角咀、屯門或火炭任何一間分店參觀樣板，或隨時隨地使用網上配置器即時獲得報價。各分店的相片、地址及地圖請見 <a href="stores.html">分店地址</a> 頁面。',
+        q4: '落單前可以親身查看鏡子樣板嗎？',
+        a4: '可以。我們建議您在確認訂單前，親臨我們任何一間分店，實地觀看 Guardian Glass 鏡面顏色及邊緣處理的樣板。',
+        q5: '分店的營業時間是？',
+        a5: '大角咀、屯門及火炭分店的營業時間為星期一至五上午9時至下午5時30分，星期六上午9時至下午3時（星期日休息）。各分店前往方式請見 <a href="stores.html">分店地址</a> 頁面。',
+        q6: '訂製鏡子的價錢是多少？',
+        a6: '價格視乎形狀、尺寸、鏡面顏色、厚度及邊緣處理而定。請使用 <a href="mirror-configurator.html">網上配置器</a>，根據您的量度及選擇獲得準確報價 — 每件產品設有最低計價面積（視乎形狀為2至3平方呎），訂購5件或以上及10件或以上可享批量優惠。',
+        q7: '你們提供免費報價嗎？',
+        a7: '是的 — 我們的網上配置器為任何形狀及尺寸提供免費即時報價。三個 WhatsApp 按鈕（每間分店各一個）會一直顯示並隨您的設定自動更新 — 只需輕按您想聯絡的分店即可傳送。詳細流程請見 <a href="guide-first-time.html">第一次來訪指南</a>。',
+        q8: '可以訂製特別尺寸或形狀嗎？',
+        a8: '可以 — 配置器支援長方形、圓形、橢圓形及三角形，並可於工具範圍內自由調校尺寸。如需其他形狀，歡迎聯絡任何分店，或透過 WhatsApp 傳送相片予我們，我們會告知是否可以製作。',
+        q9: '你們提供哪些鏡面顏色？',
+        a9: '銀色、Guardian Glass（泰國）、灰色、茶色及金色。各款外觀及常見用途請見 <a href="guide-mirror-tints.html">鏡面顏色指南</a>。',
+        q10: '應該選擇哪種邊緣處理？',
+        a10: '視乎邊緣是否外露而定。原邊或平邊適合鑲嵌於框架內的鏡子；拋光邊是無框鏡子的標準選擇；斜邊則屬於高級裝飾選項。詳細比較請見 <a href="guide-edge-finishes.html">邊緣處理指南</a>。',
+        q11: '如何為鏡子度尺寸？',
+        a11: '請於空間最闊及最高處量度闊度及高度（圓形則量度直徑）。如安裝於框架或凹位內，請量度開口尺寸而非牆身空間。初步報價只需大概尺寸即可 — 我們分店團隊可於裁切前協助確認準確數字。',
+        q12: '應該選擇哪種厚度？',
+        a12: '較大的鏡子一般建議選用較厚的玻璃，以增加硬度並減少反射時出現的變形或波紋。較小的鏡子則可選用較薄、較輕的選項。如有需要，我們分店團隊樂意就您的尺寸提供厚度建議。',
+        q13: '你們接受哪些付款方式？',
+        a13: '我們接受各大信用卡、銀行轉帳、轉數快（FPS）及現金付款，適用於本港三間分店。付款詳情將於落單後由職員直接與您確認。',
+        q14: '訂製訂單需要多長時間完成？',
+        a14: '由於我們自設生產線，一般訂製鏡子通常可於一星期內完成，實際時間視乎顏色、尺寸及處理方式而定。請聯絡就近分店查詢最新製作時間。',
+        q15: '落單後可以修改訂單嗎？',
+        a15: '由於訂單確認後會盡快安排生產，只有在製作尚未開始前才可作出更改。如需調整尺寸或處理方式，請立即透過以下電話或 WhatsApp 聯絡我們。',
+        q16: '訂單是否包括安裝服務？',
+        a16: '我們會按您的準確尺寸供應及製作鏡子，隨時可供安裝 — 惟安裝服務並非由我們直接提供，但樂意為您推薦信譽良好的師傅。歡迎親臨分店或透過 WhatsApp 查詢。',
+        q17: '如果鏡子送到時有損壞或瑕疵怎麼辦？',
+        a17: '請於收貨或取貨時仔細檢查玻璃。如發現運輸損壞、刮花或鍍銀瑕疵，請於安裝前立即透過 WhatsApp 通知我們並附上清晰相片，確認問題後我們會盡快安排更換或處理。',
+        q18: '如何清潔及保養鏡子？',
+        a18: '請使用柔軟布料及溫和玻璃清潔劑清潔，並避免將清潔劑直接噴灑於邊緣位置，因水分日積月累可能滲入鍍銀層導致出現黑斑。請勿使用磨蝕性物料或含高濃度氨的化學清潔劑。',
+        q19: '你們有處理商業或大型批發項目嗎？',
+        a19: '是的。除為家居用戶提供零售訂單外，我們的母公司亦為發展商、承建商及各類裝修工程，大量製造及供應鏡子、玻璃及鋁質產品，覆蓋全香港。歡迎聯絡我們團隊商討批量需求。'
+      }
+    };
+  </script>
 
 </div>
 
 <footer class="site-footer">
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+    </div>
+  </div>
   <div class="footer-banner">
-    <h2 id="lbl-contact-banner">Contact Us Now to Order</h2>
+    <h2 id="lbl-contact-banner" class="visually-hidden">Contact Us Now to Order</h2>
     <p id="lbl-contact-banner-sub">Get in touch to confirm pricing and place your order.</p>
   </div>
 
@@ -874,7 +1012,7 @@
       <p class="store-address">G/F, 8-10 Larch Street, Tai Kok Tsui, Kowloon</p>
       <div class="store-actions">
         <a href="tel:+85223931419">2393 1419</a>
-        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -882,7 +1020,7 @@
       <p class="store-address">Shop 2A &amp; B, G/F, Ming Fat Industrial Centre, 1 Kin Fat Street, Tuen Mun, New Territories</p>
       <div class="store-actions">
         <a href="tel:+85226187462">2618 7462</a>
-        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -890,7 +1028,7 @@
       <p class="store-address">Shop A, G/F, Block 1, Kin Ho Industrial Building, 14-24 Au Pui Wan Street, Fo Tan</p>
       <div class="store-actions">
         <a href="tel:+85235808136">3580 8136</a>
-        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -925,6 +1063,8 @@
 
   const navLinks = document.querySelectorAll('[data-i18n-nav]');
   const langBtns = document.querySelectorAll('#lang-toggle button');
+  const pageEls = document.querySelectorAll('[data-i18n]');
+  const pageI18N = window.PAGE_I18N || null;
 
   function applyLanguage(lang){
     const t = I18N[lang];
@@ -942,6 +1082,12 @@
     const fc = document.getElementById('footer-copy'); if(fc) fc.textContent = t.footerCopy;
     const fs = document.getElementById('footer-sister');
     if(fs) fs.innerHTML = t.footerSister.replace('le-relaxshower.com', '<a href="https://www.le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a>');
+    if(pageI18N && pageI18N[lang]){
+      pageEls.forEach(el => {
+        const key = el.dataset.i18n;
+        if(pageI18N[lang][key] !== undefined) el.textContent = pageI18N[lang][key];
+      });
+    }
   }
 
   langBtns.forEach(btn=>{

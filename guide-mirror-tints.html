@@ -33,6 +33,15 @@
     --ok-green: #25D366;
   }
   *{ box-sizing: border-box; }
+  .visually-hidden{
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
   html,body{ margin:0; padding:0; }
   body{
     background: var(--bg);
@@ -486,8 +495,36 @@
   }
   .footer-banner{
     text-align:center;
-    padding: 34px 20px 26px;
+    padding: 0 0 26px;
     border-bottom: 1px solid var(--line);
+  }
+  .ticker-wrap{
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--text);
+    padding: 12px 0;
+    margin-bottom: 18px;
+  }
+  .ticker-track{
+    display: inline-flex;
+    animation: ticker-scroll 18s linear infinite;
+  }
+  .ticker-track span{
+    padding: 0 28px;
+    font-family:'Archivo', 'Noto Sans TC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  @keyframes ticker-scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{ animation: none; }
   }
   .footer-banner h2{
     font-family:'Archivo', 'Noto Sans TC', sans-serif;
@@ -777,43 +814,108 @@
     <a href="stores.html"  data-i18n-nav="stores">Our Stores</a>
     <a href="faq.html"  data-i18n-nav="faq">FAQ</a>
   </nav>
-  <p class="breadcrumb"><a href="mirror-configurator.html">Home</a> &rsaquo; <a href="guides.html">Guides</a> &rsaquo; Mirror Tints</p>
-  <h1 class="page-title">Mirror Tints &amp; Guardian Glass: A Complete Guide</h1>
+  <p class="breadcrumb"><a href="mirror-configurator.html" data-i18n="bcHome">Home</a> &rsaquo; <a href="guides.html" data-i18n="bcGuides">Guides</a> &rsaquo; <span data-i18n="bcThis">Mirror Tints</span></p>
+  <h1 class="page-title" data-i18n="h1">Mirror Tints &amp; Guardian Glass: A Complete Guide</h1>
   <div class="article-body">
-    <p>Our featured mirror is Guardian Glass, made in Thailand — a globally recognised glass manufacturer known for consistent silvering quality, which means a cleaner reflection and better long-term resistance to black-spot corrosion than budget mirror glass. We also stock a range of standard and coloured mirror tints for different looks and budgets.</p>
+    <p data-i18n="intro">Our featured mirror is Guardian Glass, made in Thailand — a globally recognised glass manufacturer known for consistent silvering quality, which means a cleaner reflection and better long-term resistance to black-spot corrosion than budget mirror glass. We also stock a range of standard and coloured mirror tints for different looks and budgets.</p>
 
-    <h2>Our tint options</h2>
+    <h2 data-i18n="swatchTitle">Our tint options</h2>
     <div class="swatch-row">
-      <div class="swatch"><div class="swatch-box" style="background:#d7dee2;"></div>Silver</div>
-      <div class="swatch"><div class="swatch-box" style="background:#c9d3d6;"></div>Guardian (Thailand)</div>
-      <div class="swatch"><div class="swatch-box" style="background:#9aa6ab;"></div>Grey</div>
-      <div class="swatch"><div class="swatch-box" style="background:#8a6a4a;"></div>Bronze</div>
-      <div class="swatch"><div class="swatch-box" style="background:#c9a227;"></div>Gold</div>
+      <div class="swatch"><div class="swatch-box" style="background:#d7dee2;"></div><span data-i18n="swSilver">Silver</span></div>
+      <div class="swatch"><div class="swatch-box" style="background:#c9d3d6;"></div><span data-i18n="swGuardian">Guardian (Thailand)</span></div>
+      <div class="swatch"><div class="swatch-box" style="background:#9aa6ab;"></div><span data-i18n="swGrey">Grey</span></div>
+      <div class="swatch"><div class="swatch-box" style="background:#8a6a4a;"></div><span data-i18n="swBronze">Bronze</span></div>
+      <div class="swatch"><div class="swatch-box" style="background:#c9a227;"></div><span data-i18n="swGold">Gold</span></div>
     </div>
 
-    <p><strong>Silver Mirror</strong> — our standard mirror, the true reflection most people picture when they think "mirror." Brightest and most neutral of the range, and the most versatile for bathrooms, wardrobes, and general use. Available from 3mm to 6mm.</p>
+    <p><strong data-i18n="lbl1">Silver Mirror</strong> &mdash; <span data-i18n="p1">Our standard mirror, the true reflection most people picture when they think "mirror." Brightest and most neutral of the range, and the most versatile for bathrooms, wardrobes, and general use. Available from 3mm to 6mm.</span></p>
 
-    <p><strong>Guardian Glass Mirror (Thailand)</strong> — our featured premium option at 6mm, from Guardian Glass's Thailand facility. Same bright, neutral reflection as our standard Silver Mirror, with the added quality consistency of a globally recognised manufacturer — worth the choice when long-term clarity and corrosion resistance matter most.</p>
+    <p><strong data-i18n="lbl2">Guardian Glass Mirror (Thailand)</strong> &mdash; <span data-i18n="p2">Our featured premium option at 6mm, from Guardian Glass's Thailand facility. Same bright, neutral reflection as our standard Silver Mirror, with the added quality consistency of a globally recognised manufacturer — worth the choice when long-term clarity and corrosion resistance matter most.</span></p>
 
-    <p><strong>Grey Mirror</strong> — a soft, smoky tint that slightly dims the reflection. Popular for feature walls and larger installations where a fully bright silver mirror would feel too reflective or clinical.</p>
+    <p><strong data-i18n="lbl3">Grey Mirror</strong> &mdash; <span data-i18n="p3">A soft, smoky tint that slightly dims the reflection. Popular for feature walls and larger installations where a fully bright silver mirror would feel too reflective or clinical.</span></p>
 
-    <p><strong>Bronze Mirror</strong> — a warm, amber-tinted reflection. Common in bar counters, wardrobe doors and accent panels where a warmer, more traditional look is wanted.</p>
+    <p><strong data-i18n="lbl4">Bronze Mirror</strong> &mdash; <span data-i18n="p4">A warm, amber-tinted reflection. Common in bar counters, wardrobe doors and accent panels where a warmer, more traditional look is wanted.</span></p>
 
-    <p><strong>Gold Mirror</strong> — a rich, warm gold-tinted reflection. Used for statement feature pieces and higher-end interiors where a distinctive warm tone is wanted.</p>
+    <p><strong data-i18n="lbl5">Gold Mirror</strong> &mdash; <span data-i18n="p5">A rich, warm gold-tinted reflection. Used for statement feature pieces and higher-end interiors where a distinctive warm tone is wanted.</span></p>
 
-    <h2>Which tint should you choose?</h2>
-    <p>For everyday bathroom or dressing mirrors, Silver or the Guardian Glass Thailand mirror are the right call — both give the brightest, most accurate reflection and are easiest to match with existing fixtures. Grey and Bronze suit feature installations where you want the mirror itself to contribute to the room's tone rather than disappear into the wall. Gold is best reserved for standout accent pieces.</p>
+    <h2 data-i18n="h2-2">Which tint should you choose?</h2>
+    <p data-i18n="p6">For everyday bathroom or dressing mirrors, Silver or the Guardian Glass Thailand mirror are the right call — both give the brightest, most accurate reflection and are easiest to match with existing fixtures. Grey and Bronze suit feature installations where you want the mirror itself to contribute to the room's tone rather than disappear into the wall. Gold is best reserved for standout accent pieces.</p>
 
-    <p>Once you've settled on a tint, head back to the <a href="mirror-configurator.html">configurator</a> to get an instant price for your size and shape, or check our <a href="guide-edge-finishes.html">edge finishes guide</a> next.</p>
+    <p data-i18n="closing">Once you've settled on a tint, head back to the <a href="mirror-configurator.html">configurator</a> to get an instant price for your size and shape, or check our <a href="guide-edge-finishes.html">edge finishes guide</a> next.</p>
 
-    <a class="back-to-guides" href="guides.html">&larr; All Guides</a>
+    <a class="back-to-guides" href="guides.html" data-i18n="back">&larr; All Guides</a>
   </div>
+
+  <script>
+    window.PAGE_I18N = {
+      en: {
+        bcHome: 'Home', bcGuides: 'Guides', bcThis: 'Mirror Tints',
+        h1: 'Mirror Tints & Guardian Glass: A Complete Guide',
+        back: '← All Guides',
+        'intro': 'Our featured mirror is Guardian Glass, made in Thailand — a globally recognised glass manufacturer known for consistent silvering quality, which means a cleaner reflection and better long-term resistance to black-spot corrosion than budget mirror glass. We also stock a range of standard and coloured mirror tints for different looks and budgets.',
+        'swatchTitle': 'Our tint options',
+        'swSilver': 'Silver',
+        'swGuardian': 'Guardian (Thailand)',
+        'swGrey': 'Grey',
+        'swBronze': 'Bronze',
+        'swGold': 'Gold',
+        'p1': 'Our standard mirror, the true reflection most people picture when they think "mirror." Brightest and most neutral of the range, and the most versatile for bathrooms, wardrobes, and general use. Available from 3mm to 6mm.',
+        'p2': "Our featured premium option at 6mm, from Guardian Glass's Thailand facility. Same bright, neutral reflection as our standard Silver Mirror, with the added quality consistency of a globally recognised manufacturer — worth the choice when long-term clarity and corrosion resistance matter most.",
+        'p3': 'A soft, smoky tint that slightly dims the reflection. Popular for feature walls and larger installations where a fully bright silver mirror would feel too reflective or clinical.',
+        'p4': 'A warm, amber-tinted reflection. Common in bar counters, wardrobe doors and accent panels where a warmer, more traditional look is wanted.',
+        'p5': 'A rich, warm gold-tinted reflection. Used for statement feature pieces and higher-end interiors where a distinctive warm tone is wanted.',
+        'h2-2': 'Which tint should you choose?',
+        'p6': "For everyday bathroom or dressing mirrors, Silver or the Guardian Glass Thailand mirror are the right call — both give the brightest, most accurate reflection and are easiest to match with existing fixtures. Grey and Bronze suit feature installations where you want the mirror itself to contribute to the room's tone rather than disappear into the wall. Gold is best reserved for standout accent pieces.",
+        'closing': 'Once you\'ve settled on a tint, head back to the <a href="mirror-configurator.html">configurator</a> to get an instant price for your size and shape, or check our <a href="guide-edge-finishes.html">edge finishes guide</a> next.',
+        'lbl1': 'Silver Mirror',
+        'lbl2': 'Guardian Glass Mirror (Thailand)',
+        'lbl3': 'Grey Mirror',
+        'lbl4': 'Bronze Mirror',
+        'lbl5': 'Gold Mirror'
+      },
+      zh: {
+        bcHome: '首頁', bcGuides: '指南', bcThis: '鏡面顏色',
+        h1: '鏡面顏色及 Guardian Glass 完整指南',
+        back: '← 所有指南',
+        'intro': '我們主打的鏡子為泰國製造的 Guardian Glass — 這是一家享譽全球的玻璃製造商，以鍍銀品質穩定見稱，意味著反射效果更清晰，長遠亦較普通鏡子更能抵抗黑斑腐蝕。我們亦備有多款標準及有色鏡面，滿足不同外觀及預算需求。',
+        'swatchTitle': '我們的顏色選擇',
+        'swSilver': '銀色',
+        'swGuardian': 'Guardian（泰國）',
+        'swGrey': '灰色',
+        'swBronze': '茶色',
+        'swGold': '金色',
+        'p1': '我們的標準鏡子，是大部分人心目中「鏡子」的真實反射效果。系列中最明亮、色調最中性，最適合浴室、衣櫃及日常用途，備有3毫米至6毫米厚度可供選擇。',
+        'p2': '我們主打的6毫米高級選擇，來自 Guardian Glass 泰國廠房。反射效果與標準銀色鏡子同樣明亮中性，並具備國際知名廠商的品質穩定性 — 特別適合最重視長遠清晰度及抗腐蝕能力的場合。',
+        'p3': '柔和的煙灰色調，反射效果略為柔和。常用於特色牆身及大型裝置，避免全亮銀色鏡子顯得過於反光或冷冰冰。',
+        'p4': '溫暖的琥珀色調反射。常見於酒吧檯面、衣櫃門及裝飾板材，適合追求較溫暖、傳統風格的場合。',
+        'p5': '濃郁溫暖的金色調反射。用於矚目的特色裝飾及高端室內設計，帶來獨特的暖調效果。',
+        'h2-2': '應該選擇哪種顏色？',
+        'p6': '日常浴室或梳妝鏡子，銀色或 Guardian Glass 泰國鏡子是理想之選 — 兩者均能提供最明亮、最準確的反射，亦最易配合現有裝潢。灰色及茶色則適合特色裝置，讓鏡子本身為房間增添色調，而非融入牆身。金色則最適合用於矚目的裝飾重點。',
+        'closing': '選定顏色後，請返回<a href="mirror-configurator.html">配置器</a>，即時為您的尺寸及形狀獲得報價，或接著查看我們的<a href="guide-edge-finishes.html">邊緣處理指南</a>。',
+        'lbl1': '銀色鏡子',
+        'lbl2': 'Guardian Glass 鏡子（泰國）',
+        'lbl3': '灰色鏡子',
+        'lbl4': '茶色鏡子',
+        'lbl5': '金色鏡子'
+      }
+    };
+  </script>
 
 </div>
 
 <footer class="site-footer">
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+      <span>立即致電或 WhatsApp 落單</span><span>Contact Us Now to Order</span>
+    </div>
+  </div>
   <div class="footer-banner">
-    <h2 id="lbl-contact-banner">Contact Us Now to Order</h2>
+    <h2 id="lbl-contact-banner" class="visually-hidden">Contact Us Now to Order</h2>
     <p id="lbl-contact-banner-sub">Get in touch to confirm pricing and place your order.</p>
   </div>
 
@@ -823,7 +925,7 @@
       <p class="store-address">G/F, 8-10 Larch Street, Tai Kok Tsui, Kowloon</p>
       <div class="store-actions">
         <a href="tel:+85223931419">2393 1419</a>
-        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85268419246?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -831,7 +933,7 @@
       <p class="store-address">Shop 2A &amp; B, G/F, Ming Fat Industrial Centre, 1 Kin Fat Street, Tuen Mun, New Territories</p>
       <div class="store-actions">
         <a href="tel:+85226187462">2618 7462</a>
-        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255346347?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="store-card">
@@ -839,7 +941,7 @@
       <p class="store-address">Shop A, G/F, Block 1, Kin Ho Industrial Building, 14-24 Au Pui Wan Street, Fo Tan</p>
       <div class="store-actions">
         <a href="tel:+85235808136">3580 8136</a>
-        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20mirror%20quote.%20%28via%20website%29" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="whatsapp" href="https://wa.me/85255321176?text=Hi%21%20I%27d%20like%20to%20enquire%20about%20a%20glass%20or%20mirror%20quote.%20%28via%20website%29%20%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%8E%BB%E7%92%83%E6%88%96%E9%8F%A1%E5%AD%90%E5%A0%B1%E5%83%B9%E3%80%82%EF%BC%88%E9%80%8F%E9%81%8E%E7%B6%B2%E7%AB%99%EF%BC%89" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -874,6 +976,8 @@
 
   const navLinks = document.querySelectorAll('[data-i18n-nav]');
   const langBtns = document.querySelectorAll('#lang-toggle button');
+  const pageEls = document.querySelectorAll('[data-i18n]');
+  const pageI18N = window.PAGE_I18N || null;
 
   function applyLanguage(lang){
     const t = I18N[lang];
@@ -891,6 +995,12 @@
     const fc = document.getElementById('footer-copy'); if(fc) fc.textContent = t.footerCopy;
     const fs = document.getElementById('footer-sister');
     if(fs) fs.innerHTML = t.footerSister.replace('le-relaxshower.com', '<a href="https://www.le-relaxshower.com" target="_blank" rel="noopener">le-relaxshower.com</a>');
+    if(pageI18N && pageI18N[lang]){
+      pageEls.forEach(el => {
+        const key = el.dataset.i18n;
+        if(pageI18N[lang][key] !== undefined) el.textContent = pageI18N[lang][key];
+      });
+    }
   }
 
   langBtns.forEach(btn=>{
